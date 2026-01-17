@@ -8,8 +8,8 @@
     --foreground: 0 0% 9%; /* Noir */
 
     /* Couleur de marque – CG Renov */
-    --primary: 32 85% 56%; /* #EF8A2E ORANGE entreprise */
-    --primary-hover: 32 90% 48%; /* orange plus foncé */
+    --primary: 30 83% 55%; /* #EC8C2E ORANGE entreprise */
+    --primary-hover: 30 83% 45%; /* orange plus foncé */
 
     /* Primary background */
     --primary-bg: 0 0% 100%; /* Blanc */

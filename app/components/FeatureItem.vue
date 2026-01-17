@@ -23,7 +23,7 @@ defineProps<{
       <h3 class="font-semibold text-foreground">
         {{ title }}
       </h3>
-      <p class="mt-1 text-sm text-muted-foreground dark:text-gray-300">
+      <p class="mt-1 text-sm text-muted-foreground ">
         {{ description }}
       </p>
     </div>
