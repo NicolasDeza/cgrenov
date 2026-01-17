@@ -59,15 +59,17 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/"
-            class="hover:text-gray-600  transition"
+            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
+            active-class="!border-primary"
           >
             Accueil
           </NuxtLink>
         </li>
          <li>
           <NuxtLink
-            to="/contact"
-            class="hover:text-gray-600  transition"
+            to="/services"
+            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
+            active-class="!border-primary"
           >
             Services
           </NuxtLink>
@@ -75,8 +77,9 @@ onUnmounted(() => {
 
          <li>
           <NuxtLink
-            to="/contact"
-            class="hover:text-gray-600  transition"
+            to="/realisations"
+            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
+            active-class="!border-primary"
           >
             Réalisations
           </NuxtLink>
@@ -86,7 +89,8 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/contact"
-            class="hover:text-gray-600  transition"
+            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
+            active-class="!border-primary"
           >
             Contact
           </NuxtLink>
@@ -102,7 +106,7 @@ onUnmounted(() => {
         <!-- CTA desktop -->
         <NuxtLink
           to="/contact"
-          class="hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition"
+          class="hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover hover:scale-105 transition-transform"
         >
           Contact
         </NuxtLink>
@@ -119,7 +123,7 @@ onUnmounted(() => {
           <svg
             v-if="!isMenuOpen"
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-gray-700 "
+            class="h-6 w-6 text-gray-700 "
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -136,7 +140,7 @@ onUnmounted(() => {
           <svg
             v-else
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-gray-700 "
+            class="h-6 w-6 text-gray-700 "
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

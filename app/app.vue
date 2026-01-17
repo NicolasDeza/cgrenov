@@ -4,7 +4,7 @@
 
 <template>
   <NuxtLoadingIndicator
-    color="#00DC82"
+    color="#EC8C2E"
     :height="3"
     :duration="2500"
     :throttle="0"
