@@ -1,17 +1,5 @@
 <script setup lang="ts">
-const colorMode = useColorMode();
 
-// Theme color dynamique selon le mode
-useHead({
-  meta: [
-    {
-      name: "theme-color",
-      content: computed(() =>
-        colorMode.preference === "dark" ? "#0F172B" : "#FFFFFF"
-      ),
-    },
-  ],
-});
 </script>
 
 <template>
