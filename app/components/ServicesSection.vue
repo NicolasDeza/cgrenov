@@ -33,7 +33,7 @@ const services = [
 </script>
 
 <template>
-    <section aria-labelledby="services" class="py-20 bg-primary-bg">
+    <section aria-labelledby="services" class="py-16 md:py-24 bg-primary-bg">
   <div class="max-w-[1440px] mx-auto px-4">
     <header class="mb-12 text-center">
       <h2 id="services" class="text-3xl md:text-4xl font-bold">
@@ -49,7 +49,7 @@ const services = [
     </header>
 
        <!-- Cards -->
-      <div class="pt-6 md:pt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="pt-4 md:pt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <NuxtLink
           v-for="service in services"
           :key="service.title"
@@ -59,7 +59,7 @@ const services = [
                  transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
           <!-- Image -->
         <!-- Image -->
-<div class="relative aspect-[4/3] overflow-hidden">
+<div class="relative aspect-[4/3] overflow-hidden ">
   <img
     :src="service.image"
     :alt="service.title"

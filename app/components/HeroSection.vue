@@ -6,7 +6,7 @@
     aria-label="Section d'accueil"
   >
     <!-- Overlay sombre -->
-    <div class="absolute inset-0 bg-black/70"/>
+    <div class="absolute inset-0 bg-black/65"/>
     
     <!-- Wrapper 1440px pour le contenu -->
     <div

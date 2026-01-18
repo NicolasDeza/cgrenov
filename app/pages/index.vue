@@ -37,6 +37,6 @@ useSeoMeta({
   <div>
     <HeroSection />
     <ServicesSection/>
-    <FeaturesSection />
+    <WhyUsSection />
   </div>
 </template>
