@@ -28,9 +28,8 @@ avec une expertise reconnue en toiture, couverture et travaux extérieurs.
       <!-- Actions -->
       <div class="mt-6 flex flex-wrap items-center justify-start gap-4">
         <NuxtLink
-          to="https://github.com/NicolasDeza/nuxt-starter-vitrine"
-          target="_blank"
-          rel="noopener noreferrer"
+          to="/contact"
+
           class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2 md:py-3 text-lg font-bold text-white hover:bg-primary-hover hover:scale-105 transition-transform"
         >
           Demander un devis

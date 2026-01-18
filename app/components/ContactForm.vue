@@ -20,6 +20,11 @@ declare global {
 onMounted(() => {
   const state = useState<string | null>("turnstile")
 
+  if (!config.public.turnstileSiteKey) {
+    console.error("Turnstile sitekey manquant")
+    return
+  }
+
   const renderWidget = () => {
     if (window.turnstile && !widgetId.value) {
       try {
@@ -277,7 +282,12 @@ onBeforeUnmount(() => {
           </div>
 
           <!-- Turnstile widget (rendu forcé manuellement) -->
-          <div id="cf-turnstile-container" class="mb-4" />
+ <div class="mb-4">
+  <div
+    id="cf-turnstile-container"
+    class="min-h-[70px] flex items-center"
+  />
+</div>
 
           <div
             class="flex items-center justify-center gap-2 text-xs text-foreground/50 dark:text-white/50 mb-2"
