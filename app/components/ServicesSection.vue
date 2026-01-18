@@ -56,9 +56,7 @@ const services = [
           :to="`/services/${service.slug}`"
           :aria-label="`En savoir plus sur ${service.title}`"
           class="group block overflow-hidden rounded-xl bg-white shadow-sm
-                 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer
-                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-        >
+                 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
           <!-- Image -->
         <!-- Image -->
 <div class="relative aspect-[4/3] overflow-hidden">
