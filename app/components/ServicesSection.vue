@@ -28,6 +28,7 @@ const services = [
     image: "/images/services/exterieur.jpg",
     slug: "travaux-exterieurs",
   },
+  
 ];
 </script>
 
@@ -38,10 +39,13 @@ const services = [
       <h2 id="services" class="text-3xl md:text-4xl font-bold">
         Nos services de <span class="text-primary">rénovation</span> & <span class="text-primary">toiture</span>
       </h2>
-      <p class="mt-4 text-gray-700 max-w-2xl mx-auto text-medium font-semibold">
+      
+
+      <p class="mt-6 text-gray-700 max-w-2xl mx-auto text-medium font-semibold">
         CG Renov propose une gamme complète de services pour vos travaux de rénovation,
         avec une expertise particulière en toiture.
       </p>
+      <div class="mx-auto mt-8 h-1 w-32 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60"/>
     </header>
 
        <!-- Cards -->
@@ -52,29 +56,49 @@ const services = [
           :to="`/services/${service.slug}`"
           :aria-label="`En savoir plus sur ${service.title}`"
           class="group block overflow-hidden rounded-xl bg-white shadow-sm
-                 transition hover:-translate-y-1 hover:shadow-md cursor-pointer
+                 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           <!-- Image -->
-          <div class="aspect-[4/3] overflow-hidden">
-            <NuxtImg
-              :src="service.image"
-              :alt="service.title"
-              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-          />
-          </div>
+        <!-- Image -->
+<div class="relative aspect-[4/3] overflow-hidden">
+  <img
+    :src="service.image"
+    :alt="service.title"
+    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+    loading="lazy"
+  >
+
+  <!-- Overlay hover -->
+  <div
+    class="absolute inset-0 flex items-center justify-center
+           bg-black/40 opacity-0 transition-opacity duration-300
+           group-hover:opacity-100"
+  >
+    <span
+  class="text-white font-semibold tracking-wide
+         translate-y-2 opacity-0 transition-all duration-300
+         group-hover:translate-y-0 group-hover:opacity-100"
+>
+  Découvrir le service 
+</span>
+
+  </div>
+</div>
 
           <!-- Texte -->
           <div class="p-6">
-            <h3 class="text-lg font-semibold">
+            <h3 class="text-lg font-semibold mb-2">
               {{ service.title }}
             </h3>
 
-            <p class="mt-2 text-sm text-gray-700">
+            <p class="text-sm text-gray-700 mb-3">
               {{ service.description }}
             </p>
+
+            <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+              Service
+            </span>
           </div>
         </NuxtLink>
       </div>

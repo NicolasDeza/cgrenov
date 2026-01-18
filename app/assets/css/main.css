@@ -14,4 +14,10 @@
     /* Primary background */
     --primary-bg: 0 0% 100%; /* Blanc */
   }
+
+  /* Focus global orange pour l'accessibilité */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
 }

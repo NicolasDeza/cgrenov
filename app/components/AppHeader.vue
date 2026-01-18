@@ -59,8 +59,8 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/"
-            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
-            active-class="!border-primary"
+            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
+            active-class="!border-primary !text-primary"
           >
             Accueil
           </NuxtLink>
@@ -68,8 +68,8 @@ onUnmounted(() => {
          <li>
           <NuxtLink
             to="/services"
-            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
-            active-class="!border-primary"
+            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
+            active-class="!border-primary !text-primary"
           >
             Services
           </NuxtLink>
@@ -78,8 +78,8 @@ onUnmounted(() => {
          <li>
           <NuxtLink
             to="/realisations"
-            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
-            active-class="!border-primary"
+            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
+            active-class="!border-primary !text-primary"
           >
             Réalisations
           </NuxtLink>
@@ -89,8 +89,8 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/contact"
-            class="hover:text-gray-600 transition pb-1 border-b-2 border-transparent"
-            active-class="!border-primary"
+            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
+            active-class="!border-primary !text-primary"
           >
             Contact
           </NuxtLink>
