@@ -20,44 +20,46 @@ import {
         <a
           href="tel:+32493329794"
           class="inline-flex items-center gap-2 hover:text-primary transition"
+          aria-label="Appelez-nous au +32 493 32 97 94"
         >
-          <Phone :size="16" />
+          <Phone :size="16" aria-hidden="true" />
           +32 493 32 97 94
         </a>
 
-        <span class="hidden sm:block text-white/30">•</span>
+        <span class="hidden sm:block text-white/30" aria-hidden="true">•</span>
 
         <a
           href="mailto:contact@cg-renov.be"
           class="inline-flex items-center gap-2 hover:text-primary transition"
+          aria-label="Envoyez-nous un email à contact@cg-renov.be"
         >
-          <Mail :size="16" />
+          <Mail :size="16" aria-hidden="true" />
           contact@cg-renov.be
         </a>
 
-        <span class="hidden sm:block text-white/30">•</span>
+        <span class="hidden lg:block text-white/30" aria-hidden="true">•</span>
 
-        <span class="inline-flex items-center gap-2 text-white/60">
-          <MapPin :size="16" />
+        <span class="hidden lg:inline-flex items-center gap-2 text-white/60">
+          <MapPin :size="16" aria-hidden="true" />
           Brabant wallon & Wallonie
         </span>
       </div>
 
       <!-- Réseaux sociaux -->
-      <div class="flex items-center gap-3">
+      <div class="hidden lg:flex items-center gap-3">
         <a
           href="#"
           class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 text-white/70 hover:bg-primary hover:text-white transition-all"
-          aria-label="Facebook"
+          aria-label="Suivez-nous sur Facebook"
         >
-          <Facebook :size="18" />
+          <Facebook :size="18" aria-hidden="true" />
         </a>
         <a
           href="#"
           class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 text-white/70 hover:bg-primary hover:text-white transition-all"
-          aria-label="Instagram"
+          aria-label="Suivez-nous sur Instagram"
         >
-          <Instagram :size="18" />
+          <Instagram :size="18" aria-hidden="true" />
         </a>
       </div>
     </div>
