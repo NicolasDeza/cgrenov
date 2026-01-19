@@ -15,7 +15,7 @@ defineProps<{
           class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-        <!-- léger overlay -->
+        <!-- overlay -->
         <!-- <div class="absolute inset-0 bg-black/20"/> -->
       </div>
      

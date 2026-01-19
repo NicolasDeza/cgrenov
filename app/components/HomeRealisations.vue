@@ -3,6 +3,10 @@ import { ref } from 'vue'
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-vue-next'
 
 const currentIndex = ref(0)
+const touchStartX = ref(0)
+const touchStartY = ref(0)
+const touchEndX = ref(0)
+const isSwiping = ref(false)
 
 const realisations = [
   {
@@ -44,13 +48,62 @@ const next = () => {
 }
 
 const prev = () => {
-  currentIndex.value = currentIndex.value === 0 ? realisations.length - 1 : currentIndex.value - 1
+  currentIndex.value =
+    currentIndex.value === 0 ? realisations.length - 1 : currentIndex.value - 1
 }
 
 const goTo = (index: number) => {
   currentIndex.value = index
 }
+
+/* =====================
+   Swipe mobile
+===================== */
+
+const handleTouchStart = (e: TouchEvent) => {
+  const touch = e.touches.item(0)
+  if (!touch) return
+
+  touchStartX.value = touch.clientX
+  touchStartY.value = touch.clientY
+  isSwiping.value = false
+}
+
+const handleTouchMove = (e: TouchEvent) => {
+  const touch = e.touches.item(0)
+  if (!touch) return
+
+  const diffX = Math.abs(touch.clientX - touchStartX.value)
+  const diffY = Math.abs(touch.clientY - touchStartY.value)
+
+  // swipe horizontal uniquement
+  if (diffX > diffY && diffX > 10) {
+    isSwiping.value = true
+    touchEndX.value = touch.clientX
+  }
+}
+
+const handleTouchEnd = () => {
+  if (!isSwiping.value) return
+
+  const swipeDistance = touchStartX.value - touchEndX.value
+  const minSwipeDistance = 60
+
+  if (Math.abs(swipeDistance) > minSwipeDistance) {
+    if (swipeDistance > 0) {
+      next()
+    } else {
+      prev()
+    }
+  }
+
+  // reset
+  touchStartX.value = 0
+  touchEndX.value = 0
+  isSwiping.value = false
+}
 </script>
+
 
 <template>
   <section class="py-16 md:py-24 bg-white">
@@ -72,7 +125,13 @@ const goTo = (index: number) => {
       <!-- Carousel -->
       <div class="relative max-w-4xl mx-auto" role="region" aria-label="Carousel de nos réalisations">
         <!-- Card Container -->
-        <div class="overflow-hidden" aria-live="polite">
+        <div 
+          class="overflow-hidden" 
+          aria-live="polite"
+          @touchstart="handleTouchStart"
+          @touchmove="handleTouchMove"
+          @touchend="handleTouchEnd"
+        >
           <div 
             class="flex transition-transform duration-500 ease-out"
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"

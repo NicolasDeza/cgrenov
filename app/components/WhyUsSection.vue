@@ -51,10 +51,7 @@ const reasons = [
             Pourquoi choisir CG Renov
           </h2>
 
-          <p class="mt-4 text-gray-700 font-semibold">
-            Nous mettons notre savoir-faire au service de vos projets,
-            avec une approche sérieuse, transparente et orientée qualité.
-          </p>
+         
         </div>
 
         <div class="text-right shrink-0">
