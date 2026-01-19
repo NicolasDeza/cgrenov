@@ -44,7 +44,7 @@ defineProps<{
                    focus-visible:ring-2 focus-visible:ring-primary
                    focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
-            Demander un devis
+            Mon devis gratuit
           </NuxtLink>
         </div>
       </div>

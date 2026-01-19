@@ -40,5 +40,6 @@ useSeoMeta({
     <ServicesSection/>
     <WhyUsSection />
     <SplitSection/>
+    <HomeRealisations/>
   </div>
-</template>
+  </template>
