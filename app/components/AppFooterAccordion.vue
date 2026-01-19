@@ -114,7 +114,7 @@ const toggleSection = (section: string) => {
               />
             </svg>
           </button>
-          <div class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60"/>
+          <div class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" aria-hidden="true"/>
 
           <!-- Liste de liens (accordéon sur mobile, toujours visible sur desktop) -->
           <div
@@ -200,7 +200,7 @@ const toggleSection = (section: string) => {
               />
             </svg>
           </button>
-          <div class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60"/>
+          <div class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" aria-hidden="true"/>
 
           <!-- Liste de liens (accordéon sur mobile, toujours visible sur desktop) -->
           <div
@@ -262,7 +262,7 @@ const toggleSection = (section: string) => {
               />
             </svg>
           </button>
-          <div class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60"/>
+          <div class="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" aria-hidden="true"/>
 
           <!-- Contenu (accordéon sur mobile, toujours visible sur desktop) -->
           <div
