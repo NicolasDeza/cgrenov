@@ -276,7 +276,7 @@ const toggleSection = (section: string) => {
           >
             <div class="min-h-0 text-sm text-foreground/60">
               <p>
-                Wallonie – principalement dans le Brabant wallon et les environs.
+                Belgique – principalement en Wallonie et Brabant-Wallon.
               </p>
             </div>
           </div>
