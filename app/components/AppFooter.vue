@@ -33,17 +33,23 @@ const year = new Date().getFullYear();
             <li>
               <NuxtLink
                 to="/"
-                class="text-foreground/60 hover:text-foreground transition"
+                class="text-foreground/60 hover:text-primary transition"
               >
                 Accueil
               </NuxtLink>
             </li>
-          
-         
+            <li>
+              <NuxtLink
+                to="/#services"
+                class="text-foreground/60 hover:text-primary transition"
+              >
+                Services
+              </NuxtLink>
+            </li>
             <li>
               <NuxtLink
                 to="/contact"
-                class="text-foreground/60 hover:text-foreground transition"
+                class="text-foreground/60 hover:text-primary transition"
               >
                 Contact
               </NuxtLink>
@@ -60,7 +66,7 @@ const year = new Date().getFullYear();
                 to="https://github.com/NicolasDeza/nuxt-starter-vitrine"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-foreground/60 hover:text-foreground transition"
+                class="text-foreground/60 hover:text-primary transition"
                 aria-label="GitHub (ouvre dans un nouvel onglet)"
               >
                 GitHub
@@ -69,7 +75,7 @@ const year = new Date().getFullYear();
             <li>
               <NuxtLink
                 to="/legal/mentions-legales"
-                class="text-foreground/60 hover:text-foreground transition"
+                class="text-foreground/60 hover:text-primary transition"
               >
                 Mentions légales
               </NuxtLink>
@@ -89,7 +95,7 @@ const year = new Date().getFullYear();
             to="https://www.nicolasdeza.com/"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-foreground/70 hover:text-foreground transition underline"
+            class="text-foreground/70 hover:text-primary transition underline"
             aria-label="Nicolas Deza (ouvre dans un nouvel onglet)"
           >
             Nicolas Deza

@@ -112,7 +112,7 @@ onBeforeUnmount(() => {
                   href="mailto:nicolasdeza@hotmail.be"
                   class="text-foreground dark:text-white font-medium hover:text-primary transition"
                 >
-                  nicolasdeza@hotmail.be
+                  cyrilgrandhenry@gmail.com
                 </a>
               </div>
             </div>

@@ -33,10 +33,10 @@ const services = [
 </script>
 
 <template>
-    <section aria-labelledby="services" class="py-16 md:py-24 bg-primary-bg">
+    <section id="services" aria-labelledby="services-title" class="py-16 md:py-24 bg-primary-bg">
   <div class="max-w-[1440px] mx-auto px-4">
     <header class="mb-12 text-center">
-      <h2 id="services" class="text-3xl md:text-4xl font-bold">
+      <h2 id="services-title" class="text-3xl md:text-4xl font-bold">
         Nos services de <span class="text-primary">rénovation</span> & <span class="text-primary">toiture</span>
       </h2>
       

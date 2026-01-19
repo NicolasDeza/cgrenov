@@ -10,6 +10,7 @@
       <slot />
     </main>
     <CtaSection />
-    <AppFooter />
+  
+    <AppFooterAccordion/>
   </div>
 </template>
