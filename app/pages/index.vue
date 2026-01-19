@@ -9,7 +9,7 @@
 });
 
 useSeoMeta({
-  title: "Nuxt Starter Vitrine",
+  title: "Accueil",
   description:
     "Template Nuxt moderne pour créer des sites vitrines performants, SEO-ready et prêts pour la production.",
 

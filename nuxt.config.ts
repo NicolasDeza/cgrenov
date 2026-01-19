@@ -43,7 +43,7 @@ export default defineNuxtConfig({
       },
 
       // Titre par défaut + template
-      titleTemplate: "%s – Nuxt Starter",
+      titleTemplate: "%s – CG Renov",
 
       meta: [
         {
