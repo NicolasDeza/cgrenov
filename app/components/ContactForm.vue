@@ -191,7 +191,7 @@ onBeforeUnmount(() => {
 
         <!-- Colonne droite : Form -->
         <form
-          class="relative p-8 lg:p-10 bg-white dark:bg-slate-800 shadow-2xl border-t-4 border-primary space-y-6"
+          class="relative rounded-lg p-8 lg:p-10 bg-white dark:bg-slate-800 shadow-2xl border-t-4 border-primary space-y-6"
           @submit.prevent="submit"
         >
           <!-- Badge professionnel en coin -->

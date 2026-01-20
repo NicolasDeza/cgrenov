@@ -118,10 +118,10 @@ const handleTouchEnd = () => {
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
           + Nos dernières réalisations
         </p>
-        <h2 class="text-3xl md:text-4xl font-bold">
+        <h2 class="text-3xl md:text-5xl font-extrabold">
           Découvrez nos <span class="text-primary">projets récents</span>
         </h2>
-        <p class="mt-4 text-gray-700 max-w-2xl mx-auto font-semibold">
+        <p class="mt-4 text-gray-700 max-w-2xl mx-auto text-medium md:text-lg font-semibold">
           Des projets variés témoignant de notre savoir-faire et de notre engagement qualité.
         </p>
         <div class="mx-auto mt-6 h-1 w-32 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />

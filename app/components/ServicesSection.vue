@@ -36,12 +36,12 @@ const services = [
     <section id="services" aria-labelledby="services-title" class="py-16 md:py-24 bg-primary-bg">
   <div class="max-w-[1440px] mx-auto px-4">
     <header class="mb-12 text-center">
-      <h2 id="services-title" class="text-3xl md:text-4xl font-bold">
+      <h2 id="services-title" class="text-3xl md:text-5xl font-extrabold">
         Nos services de <span class="text-primary">rénovation</span> & <span class="text-primary">toiture</span>
       </h2>
       
 
-      <p class="mt-6 text-gray-700 max-w-2xl mx-auto text-medium font-semibold">
+      <p class="mt-6 text-gray-700 max-w-2xl mx-auto text-medium md:text-lg font-semibold">
         CG Renov propose une gamme complète de services pour vos travaux de rénovation,
         avec une expertise particulière en toiture.
       </p>
