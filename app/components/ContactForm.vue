@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
             </h1>
 
             <!-- Description -->
-            <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+            <p class="text-lg text-slate-600  leading-relaxed font-medium">
               Un projet de rénovation en tête ? Contactez CG Renov pour échanger sur vos besoins et obtenir un premier avis, sans engagement.
             </p>
           </div>
@@ -110,8 +110,8 @@ onBeforeUnmount(() => {
             <!-- Email -->
             <div
               class="flex items-center gap-4 p-4 rounded-xl
-                     bg-white/70 dark:bg-white/5
-                     border border-foreground/10 dark:border-white/10
+                     bg-white/70 
+                     border border-foreground/10 
                      hover:border-primary/30 hover:shadow-md
                      transition-all duration-300"
             >
@@ -120,13 +120,13 @@ onBeforeUnmount(() => {
               </div>
               <div>
                 <p
-                  class="text-xs font-medium text-foreground/50 dark:text-white/50 uppercase tracking-wide mb-1"
+                  class="text-xs font-medium text-foreground/50  uppercase tracking-wide mb-1"
                 >
                   Email
                 </p>
                 <a
                   href="mailto:cyrilgrandhenry@gmail.com"
-                  class="text-foreground dark:text-white font-medium hover:text-primary transition"
+                  class="text-foreground  font-medium hover:text-primary transition"
                 >
                   cyrilgrandhenry@gmail.com
                 </a>
@@ -136,8 +136,8 @@ onBeforeUnmount(() => {
             <!-- Localisation -->
             <div
               class="flex items-center gap-4 p-4 rounded-xl
-                     bg-white/70 dark:bg-white/5
-                     border border-foreground/10 dark:border-white/10
+                     bg-white/70 
+                     border border-foreground/10 
                      hover:border-primary/30 hover:shadow-md
                      transition-all duration-300"
             >
@@ -146,11 +146,11 @@ onBeforeUnmount(() => {
               </div>
               <div>
                 <p
-                  class="text-xs font-medium text-foreground/50 dark:text-white/50 uppercase tracking-wide mb-1"
+                  class="text-xs font-medium text-foreground/50  uppercase tracking-wide mb-1"
                 >
                   Zone d’intervention
                 </p>
-                <p class="text-foreground dark:text-white font-medium">
+                <p class="text-foreground  font-medium">
                   Wallonie – Brabant wallon et environs
                 </p>
               </div>
@@ -158,7 +158,7 @@ onBeforeUnmount(() => {
 
             <!-- Réseaux sociaux -->
             <div class="pt-4">
-              <p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-4 uppercase tracking-wide">
+              <p class="text-sm font-bold text-slate-700  mb-4 uppercase tracking-wide">
                 Suivez nos réalisations
               </p>
 
@@ -168,10 +168,10 @@ onBeforeUnmount(() => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
+                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white  border-2 border-slate-200  hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
-                  <Instagram :size="20" class="text-slate-700 dark:text-slate-300 group-hover:text-primary stroke-[2.5]" />
-                  <span class="font-bold text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Instagram</span>
+                  <Instagram :size="20" class="text-slate-700  group-hover:text-primary stroke-[2.5]" />
+                  <span class="font-bold text-sm text-slate-700 group-hover:text-primary">Instagram</span>
                 </a>
 
                 <a
@@ -179,21 +179,21 @@ onBeforeUnmount(() => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
+                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white  border-2 border-slate-200  hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
-                  <Facebook :size="20" class="text-slate-700 dark:text-slate-300 group-hover:text-primary stroke-[2.5]" />
-                  <span class="font-bold text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Facebook</span>
+                  <Facebook :size="20" class="text-slate-700  group-hover:text-primary stroke-[2.5]" />
+                  <span class="font-bold text-sm text-slate-700 group-hover:text-primary">Facebook</span>
                 </a>
               </div>
             </div>
 
             <!-- Google Maps -->
             <div class="pt-6">
-              <p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-4 uppercase tracking-wide">
+              <p class="text-sm font-bold text-slate-700  mb-4 uppercase tracking-wide">
                 Où nous trouver
               </p>
               
-              <div class="relative rounded-lg overflow-hidden shadow-lg border-2 border-slate-200 dark:border-slate-700 h-64 hover:border-primary transition-colors duration-300">
+              <div class="relative rounded-lg overflow-hidden shadow-lg border-2 border-slate-200 h-64 transition-colors duration-300">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.5915512363454!2d4.619488177710046!3d50.63470407162796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c17e567790f019%3A0xe52938f69a4ed716!2sRue%20d&#39;Alvau%2021%2C%201435%20Mont-Saint-Guibert!5e0!3m2!1sfr!2sbe!4v1768941949844!5m2!1sfr!2sbe"
                   width="100%"
@@ -211,11 +211,11 @@ onBeforeUnmount(() => {
 
         <!-- Colonne droite : Form -->
         <form
-          class="relative rounded-lg p-8  lg:p-10 bg-white dark:bg-slate-800 shadow-2xl  space-y-6"
+          class="relative rounded-lg p-8  lg:p-10 bg-white  shadow-2xl  space-y-6"
           @submit.prevent="submit"
         >
           <!-- Badge professionnel en coin -->
-          <div class="absolute -top-3 right-6 px-5 py-2 bg-slate-900 dark:bg-primary text-white shadow-lg">
+          <div class="absolute -top-3 right-6 px-5 py-2 bg-slate-900  text-white shadow-lg">
             <div class="flex items-center gap-2">
               <ShieldCheck :size="14" class="stroke-[2.5]" />
               <span class="text-xs font-bold uppercase tracking-wider">Garantie Pro</span>
@@ -227,14 +227,14 @@ onBeforeUnmount(() => {
             v-if="errors.global"
             role="alert"
             aria-live="polite"
-            class="p-4 bg-red-50 dark:bg-red-500/10 border-l-4 border-red-500 text-red-700 dark:text-red-400 text-sm font-medium"
+            class="p-4 bg-red-50 border-l-4 border-red-500 text-red-700  text-sm font-medium"
           >
             {{ errors.global }}
           </div>
 
           <!-- Nom -->
           <div class="space-y-2">
-            <label for="name" class="block text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide">
+            <label for="name" class="block text-sm font-bold text-slate-900  uppercase tracking-wide">
               Nom complet
             </label>
             <input
@@ -243,13 +243,13 @@ onBeforeUnmount(() => {
               type="text"
               placeholder="Ex: Jean Dupont"
               required
-              class="w-full px-5 py-2 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-2 rounded-lg bg-slate-50  border-2 border-slate-200 text-slate-900  placeholder:text-slate-400  outline-none focus:border-primary focus:bg-white  transition-all font-medium"
             >
           </div>
 
           <!-- Email -->
           <div class="space-y-2">
-            <label for="email" class="block text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide">
+            <label for="email" class="block text-sm font-bold text-slate-900 tracking-wide">
               Adresse Email
             </label>
             <input
@@ -258,13 +258,13 @@ onBeforeUnmount(() => {
               type="email"
               placeholder="votre@email.com"
               required
-              class="w-full px-5 py-2 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-2 rounded-lg bg-slate-50  border-2 border-slate-200 text-slate-900  placeholder:text-slate-400  outline-none focus:border-primary focus:bg-white  transition-all font-medium"
             >
           </div>
 
           <!-- Message -->
           <div class="space-y-2">
-            <label for="message" class="block text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide">
+            <label for="message" class="block text-sm font-bold text-slate-900  uppercase tracking-wide">
               Votre Projet
             </label>
             <textarea
@@ -273,7 +273,7 @@ onBeforeUnmount(() => {
               rows="6"
               placeholder="Décrivez votre projet de rénovation : type de travaux, superficie, délais souhaités..."
               required
-              class="w-full px-5 py-2 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 resize-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-2 rounded-lg bg-slate-50  border-2 border-slate-200 resize-none text-slate-900  placeholder:text-slate-400 outline-none focus:border-primary focus:bg-white  transition-all font-medium"
             />
           </div>
 
@@ -306,7 +306,7 @@ onBeforeUnmount(() => {
             v-if="success"
             role="status"
             aria-live="polite"
-            class="p-5 bg-green-50 dark:bg-green-500/10 border-l-4 border-green-500 text-green-700 dark:text-green-400 text-sm font-bold flex items-center gap-3"
+            class="p-5 bg-green-50  border-l-4 border-green-500 text-green-700  text-sm font-bold flex items-center gap-3"
           >
             <span class="text-xl">✓</span>
             <span>Message envoyé ! Nous vous recontactons sous 48h.</span>
