@@ -186,12 +186,32 @@ onBeforeUnmount(() => {
                 </a>
               </div>
             </div>
+
+            <!-- Google Maps -->
+            <div class="pt-6">
+              <p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-4 uppercase tracking-wide">
+                Où nous trouver
+              </p>
+              
+              <div class="relative rounded-lg overflow-hidden shadow-lg border-2 border-slate-200 dark:border-slate-700 h-64 hover:border-primary transition-colors duration-300">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.5915512363454!2d4.619488177710046!3d50.63470407162796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c17e567790f019%3A0xe52938f69a4ed716!2sRue%20d&#39;Alvau%2021%2C%201435%20Mont-Saint-Guibert!5e0!3m2!1sfr!2sbe!4v1768941949844!5m2!1sfr!2sbe"
+                  width="100%"
+                  height="100%"
+                  style="border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Localisation CG Renov - Rue de Ville-en-Hesbaye"
+                  class="w-full h-full"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Colonne droite : Form -->
         <form
-          class="relative rounded-lg p-8 lg:p-10 bg-white dark:bg-slate-800 shadow-2xl  space-y-6"
+          class="relative rounded-lg p-8  lg:p-10 bg-white dark:bg-slate-800 shadow-2xl  space-y-6"
           @submit.prevent="submit"
         >
           <!-- Badge professionnel en coin -->
@@ -223,7 +243,7 @@ onBeforeUnmount(() => {
               type="text"
               placeholder="Ex: Jean Dupont"
               required
-              class="w-full px-5 py-4 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-2 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             >
           </div>
 
@@ -238,7 +258,7 @@ onBeforeUnmount(() => {
               type="email"
               placeholder="votre@email.com"
               required
-              class="w-full px-5 py-4 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-2 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             >
           </div>
 
@@ -253,7 +273,7 @@ onBeforeUnmount(() => {
               rows="6"
               placeholder="Décrivez votre projet de rénovation : type de travaux, superficie, délais souhaités..."
               required
-              class="w-full px-5 py-4 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 resize-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-2 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 resize-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             />
           </div>
 
