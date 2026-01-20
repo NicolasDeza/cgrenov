@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue"
-import { Mail, MapPin, Send, ShieldCheck } from "lucide-vue-next"
+import { Mail, MapPin, Send, ShieldCheck, Instagram, Facebook } from "lucide-vue-next"
 import { useContactForm } from "~/composables/useContactForm"
 
 const { form, errors, loading, success, submit } = useContactForm()
@@ -69,35 +69,53 @@ onBeforeUnmount(() => {
 
 <template>
   <section
-    class="w-full bg-gradient-to-b from-white to-slate-50/50 dark:from-[#0F172B] dark:to-[#0F172B] py-20"
+    class="w-full bg-gradient-to-br from-slate-50 via-white to-slate-100  py-20 relative overflow-hidden"
     aria-label="Formulaire de contact"
   >
-    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <!-- Colonne gauche : Informations -->
+    <!-- Motif construction en arrière-plan -->
+    <!-- <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 11px);"/>
+    </div> -->
+    
+    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+
+        <!-- ===================== -->
+        <!-- Colonne gauche : Infos -->
+        <!-- ===================== -->
         <div class="space-y-8">
-          <div class="space-y-4">
-            <div
-              class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium"
-            >
-              Contact
+          <div class="space-y-5">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-5 py-2 bg-primary text-white font-bold uppercase tracking-wider text-xs shadow-lg">
+              <div class="w-2 h-2 bg-white"/>
+              <span>Devis Gratuit</span>
             </div>
-            <h1
-              class="text-4xl sm:text-5xl font-bold text-foreground dark:text-white leading-tight"
-            >
-              Discutons de votre projet
+
+            <!-- Titre -->
+            <h1 class="text-4xl sm:text-5xl  font-black text-slate-900 dark:text-white leading-tight">
+              Votre projet de
+              <span class=" mt-2 text-primary relative inline-block">
+                rénovation
+                <svg class="absolute -bottom-2 left-0 w-full h-3 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 10" preserveAspectRatio="none">
+                  <path d="M 0 8 Q 50 3, 100 6 T 200 8" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
+              </span>
             </h1>
-            <p
-              class="text-lg text-foreground/70 dark:text-white/70 leading-relaxed"
-            >
-              Envie de collaborer ? N'hésitez pas à me contacter pour échanger
-              sur vos besoins.
+
+            <!-- Description -->
+            <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+              Un projet de rénovation en tête ? Contactez CG Renov pour échanger sur vos besoins et obtenir un premier avis, sans engagement.
             </p>
           </div>
 
           <div class="space-y-4">
+            <!-- Email -->
             <div
-              class="flex items-center gap-4 p-4 rounded-xl bg-white/50 dark:bg-white/5 border border-foreground/10 dark:border-white/10 hover:bg-white dark:hover:bg-white/10 hover:border-primary/30 hover:shadow-md transition-all duration-300 cursor-pointer"
+              class="flex items-center gap-4 p-4 rounded-xl
+                     bg-white/70 dark:bg-white/5
+                     border border-foreground/10 dark:border-white/10
+                     hover:border-primary/30 hover:shadow-md
+                     transition-all duration-300"
             >
               <div class="p-3 rounded-lg bg-primary/10">
                 <Mail :size="22" class="text-primary" />
@@ -109,7 +127,7 @@ onBeforeUnmount(() => {
                   Email
                 </p>
                 <a
-                  href="mailto:nicolasdeza@hotmail.be"
+                  href="mailto:cyrilgrandhenry@gmail.com"
                   class="text-foreground dark:text-white font-medium hover:text-primary transition"
                 >
                   cyrilgrandhenry@gmail.com
@@ -117,8 +135,13 @@ onBeforeUnmount(() => {
               </div>
             </div>
 
+            <!-- Localisation -->
             <div
-              class="flex items-center gap-4 p-4 rounded-xl bg-white/50 dark:bg-white/5 border border-foreground/10 dark:border-white/10 hover:bg-white dark:hover:bg-white/10 hover:border-primary/30 hover:shadow-md transition-all duration-300 cursor-pointer"
+              class="flex items-center gap-4 p-4 rounded-xl
+                     bg-white/70 dark:bg-white/5
+                     border border-foreground/10 dark:border-white/10
+                     hover:border-primary/30 hover:shadow-md
+                     transition-all duration-300"
             >
               <div class="p-3 rounded-lg bg-primary/10">
                 <MapPin :size="22" class="text-primary" />
@@ -127,193 +150,148 @@ onBeforeUnmount(() => {
                 <p
                   class="text-xs font-medium text-foreground/50 dark:text-white/50 uppercase tracking-wide mb-1"
                 >
-                  Localisation
+                  Zone d’intervention
                 </p>
                 <p class="text-foreground dark:text-white font-medium">
-                  Belgique
+                  Wallonie – Brabant wallon et environs
                 </p>
               </div>
             </div>
 
-            <div class="pt-2">
-              <p
-                class="text-sm font-medium text-foreground/50 dark:text-white/50 mb-3"
-              >
-                Retrouvez-moi sur
+            <!-- Réseaux sociaux -->
+            <div class="pt-4">
+              <p class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-4 uppercase tracking-wide">
+                Suivez nos réalisations
               </p>
-              <div class="flex flex-wrap gap-2">
+
+              <div class="flex gap-4">
                 <a
-                  href="https://www.linkedin.com/in/nicolas-deza-411711330/"
+                  href="https://www.instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="px-4 py-2 rounded-lg bg-foreground/5 dark:bg-white/5 text-foreground dark:text-white hover:bg-primary dark:hover:bg-primary hover:text-white text-sm font-medium transition"
+                  aria-label="Instagram"
+                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
-                  LinkedIn
+                  <Instagram :size="20" class="text-slate-700 dark:text-slate-300 group-hover:text-primary stroke-[2.5]" />
+                  <span class="font-bold text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Instagram</span>
                 </a>
+
                 <a
-                  href="https://github.com/NicolasDeza"
+                  href="https://www.facebook.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="px-4 py-2 rounded-lg bg-foreground/5 dark:bg-white/5 text-foreground dark:text-white hover:bg-primary dark:hover:bg-primary hover:text-white text-sm font-medium transition"
+                  aria-label="Facebook"
+                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.instagram.com/nicolas__deza/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="px-4 py-2 rounded-lg bg-foreground/5 dark:bg-white/5 text-foreground dark:text-white hover:bg-primary dark:hover:bg-primary hover:text-white text-sm font-medium transition"
-                >
-                  Instagram
+                  <Facebook :size="20" class="text-slate-700 dark:text-slate-300 group-hover:text-primary stroke-[2.5]" />
+                  <span class="font-bold text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary">Facebook</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Colonne droite : Formulaire -->
+        <!-- ===================== -->
+        <!-- Colonne droite : Form -->
+        <!-- ===================== -->
         <form
-          class="p-8 rounded-2xl bg-white dark:bg-slate-900/50 border border-foreground/10 dark:border-white/10 shadow-xl space-y-6"
+          class="relative p-8 lg:p-10 bg-white dark:bg-slate-800 shadow-2xl border-t-4 border-primary space-y-6"
           @submit.prevent="submit"
         >
+          <!-- Badge professionnel en coin -->
+          <div class="absolute -top-3 right-6 px-5 py-2 bg-slate-900 dark:bg-primary text-white shadow-lg">
+            <div class="flex items-center gap-2">
+              <ShieldCheck :size="14" class="stroke-[2.5]" />
+              <span class="text-xs font-bold uppercase tracking-wider">Garantie Pro</span>
+            </div>
+          </div>
+
+          <!-- Erreur globale -->
           <div
             v-if="errors.global"
             role="alert"
             aria-live="polite"
-            class="p-4 rounded-lg bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-600 dark:text-red-400 text-sm"
+            class="p-4 bg-red-50 dark:bg-red-500/10 border-l-4 border-red-500 text-red-700 dark:text-red-400 text-sm font-medium"
           >
             {{ errors.global }}
           </div>
 
+          <!-- Nom -->
           <div class="space-y-2">
-            <label
-              for="name"
-              class="block text-sm font-semibold text-foreground dark:text-white"
-            >
+            <label for="name" class="block text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide">
               Nom complet
             </label>
             <input
               id="name"
               v-model="form.name"
               type="text"
-              placeholder="John Doe"
+              placeholder="Ex: Jean Dupont"
               required
-              :aria-invalid="!!errors.name"
-              :aria-describedby="errors.name ? 'name-error' : undefined"
-              class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border-2 transition-colors text-foreground dark:text-white placeholder:text-foreground/50 dark:placeholder:text-white/50 outline-none focus-visible:border-primary"
-              :class="
-                errors.name
-                  ? 'border-red-500'
-                  : 'border-transparent focus-visible:border-primary'
-              "
+              class="w-full px-5 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             >
-            <p
-              v-if="errors.name"
-              id="name-error"
-              class="text-xs text-red-500"
-              role="alert"
-            >
-              {{ errors.name }}
-            </p>
           </div>
 
+          <!-- Email -->
           <div class="space-y-2">
-            <label
-              for="email"
-              class="block text-sm font-semibold text-foreground dark:text-white"
-            >
-              Email
+            <label for="email" class="block text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide">
+              Adresse Email
             </label>
             <input
               id="email"
               v-model="form.email"
               type="email"
-              placeholder="john@exemple.com"
+              placeholder="votre@email.com"
               required
-              :aria-invalid="!!errors.email"
-              :aria-describedby="errors.email ? 'email-error' : undefined"
-              class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border-2 transition-colors text-foreground dark:text-white placeholder:text-foreground/50 dark:placeholder:text-white/50 outline-none focus-visible:border-primary"
-              :class="
-                errors.email
-                  ? 'border-red-500'
-                  : 'border-transparent focus-visible:border-primary'
-              "
+              class="w-full px-5 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             >
-            <p
-              v-if="errors.email"
-              id="email-error"
-              class="text-xs text-red-500"
-              role="alert"
-            >
-              {{ errors.email }}
-            </p>
           </div>
 
+          <!-- Message -->
           <div class="space-y-2">
-            <label
-              for="message"
-              class="block text-sm font-semibold text-foreground dark:text-white"
-            >
-              Message
+            <label for="message" class="block text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide">
+              Votre Projet
             </label>
             <textarea
               id="message"
               v-model="form.message"
-              rows="5"
-              placeholder="Décrivez votre projet..."
+              rows="6"
+              placeholder="Décrivez votre projet de rénovation : type de travaux, superficie, délais souhaités..."
               required
-              :aria-invalid="!!errors.message"
-              :aria-describedby="errors.message ? 'message-error' : undefined"
-              class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border-2 resize-none transition-colors text-foreground dark:text-white placeholder:text-foreground/50 dark:placeholder:text-white/50 outline-none focus-visible:border-primary"
-              :class="
-                errors.message
-                  ? 'border-red-500'
-                  : 'border-transparent focus-visible:border-primary'
-              "
+              class="w-full px-5 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 resize-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             />
-            <p
-              v-if="errors.message"
-              id="message-error"
-              class="text-xs text-red-500"
-              role="alert"
-            >
-              {{ errors.message }}
-            </p>
           </div>
 
-          <!-- Turnstile widget (rendu forcé manuellement) -->
- <div class="mb-4">
-  <div
-    id="cf-turnstile-container"
-    class="min-h-[70px] flex items-center"
-  />
-</div>
+          <!-- Turnstile -->
+          <div class="mb-4">
+            <div id="cf-turnstile-container" class="min-h-[70px] flex items-center" />
+          </div>
 
-          <div
-            class="flex items-center justify-center gap-2 text-xs text-foreground/50 dark:text-white/50 mb-2"
-          >
+          <!-- Protection -->
+          <div class="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
             <ShieldCheck :size="14" class="text-primary" />
-            <span>Formulaire protégé contre le spam</span>
+            <span>Protection anti-spam active</span>
           </div>
 
+          <!-- Bouton -->
           <button
             type="submit"
             :disabled="loading"
-            class="w-full px-6 py-3.5 rounded-lg bg-primary hover:bg-primary-hover text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+            class="group relative w-full px-4 py-4 bg-primary hover:bg-primary-hover text-white font-bold text-base uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 overflow-hidden"
           >
-            <span>
-              {{ loading ? "Envoi en cours..." : "Envoyer le message" }}
-            </span>
-            <Send v-if="!loading" :size="18" />
+            <div class="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors"/>
+            <span class="relative z-10">{{ loading ? 'Envoi en cours…' : 'Envoyer' }}</span>
+            <Send v-if="!loading" :size="20" class="relative z-10 stroke-[2.5]" />
           </button>
 
+          <!-- Succès -->
           <p
             v-if="success"
             role="status"
             aria-live="polite"
-            class="p-4 rounded-lg bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-600 dark:text-green-400 text-sm text-center font-medium"
+            class="p-5 bg-green-50 dark:bg-green-500/10 border-l-4 border-green-500 text-green-700 dark:text-green-400 text-sm font-bold flex items-center gap-3"
           >
-            ✓ Message envoyé avec succès !
+            <span class="text-xl">✓</span>
+            <span>Message envoyé ! Nous vous recontactons sous 48h.</span>
           </p>
         </form>
       </div>
