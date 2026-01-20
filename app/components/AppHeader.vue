@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import { useRoute } from "vue-router";
 
+
 const route = useRoute();
 
 // Détecte si on est sur une section spécifique
@@ -9,6 +10,8 @@ const currentHash = computed(() => route.hash);
 
 // Menu mobile gestion état
 const isMenuOpen = ref(false);
+
+
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -64,26 +67,83 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/"
-            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
+            class="inline-flex items-center h-[24px] leading-[24px] hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
             :class="{ '!border-primary !text-primary': route.path === '/' && !currentHash }"
           >
             Accueil
           </NuxtLink>
         </li>
-         <li>
-          <NuxtLink
-            to="/#services"
-            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
-            :class="{ '!border-primary !text-primary': currentHash === '#services' }"
-          >
-            Services
-          </NuxtLink>
-        </li>
+        
+        <li class="relative group">
+  <NuxtLink
+    to="/#services"
+    class="inline-flex items-center gap-2 h-[24px] leading-[24px]
+           hover:text-primary transition-colors
+           pb-1 border-b-2 border-transparent font-semibold"
+    :class="{ '!border-primary !text-primary': currentHash === '#services' }"
+  >
+    Services
+    <!-- Chevron CSS -->
+    <span
+      class="inline-block w-2 h-2 border-r-2 border-b-2 border-current
+             rotate-45 "
+    />
+  </NuxtLink>
+
+  <!-- Dropdown -->
+  <div
+    class="absolute left-0 top-full mt-3 w-64
+           bg-white dark:bg-slate-800
+           rounded-lg shadow-xl border border-gray-200 dark:border-gray-700
+           py-2
+           opacity-0 invisible
+           group-hover:opacity-100 group-hover:visible
+           transition-all duration-150 z-50"
+  >
+    <NuxtLink
+      to="/#services"
+      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+    >
+      Tous nos services
+    </NuxtLink>
+
+    <div class="h-px bg-gray-200 dark:bg-gray-700 my-1" />
+
+    <NuxtLink
+      to="/services/toiture"
+      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+    >
+      Toiture & couverture
+    </NuxtLink>
+
+    <NuxtLink
+      to="/services/renovation"
+      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+    >
+      Rénovation générale
+    </NuxtLink>
+
+    <NuxtLink
+      to="/services/isolation"
+      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+    >
+      Isolation & étanchéité
+    </NuxtLink>
+
+    <NuxtLink
+      to="/services/exterieur"
+      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+    >
+      Travaux extérieurs
+    </NuxtLink>
+  </div>
+</li>
+
 
          <li>
           <NuxtLink
             to="/realisations"
-            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
+            class="inline-flex items-center h-[24px] leading-[24px] hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
             active-class="!border-primary !text-primary"
           >
             Réalisations
@@ -94,7 +154,7 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/contact"
-            class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
+            class="inline-flex items-center h-[24px] leading-[24px] hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
             active-class="!border-primary !text-primary"
           >
             Contact
