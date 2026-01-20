@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
               type="text"
               placeholder="Ex: Jean Dupont"
               required
-              class="w-full px-5 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-4 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             >
           </div>
 
@@ -238,7 +238,7 @@ onBeforeUnmount(() => {
               type="email"
               placeholder="votre@email.com"
               required
-              class="w-full px-5 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-4 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             >
           </div>
 
@@ -253,7 +253,7 @@ onBeforeUnmount(() => {
               rows="6"
               placeholder="Décrivez votre projet de rénovation : type de travaux, superficie, délais souhaités..."
               required
-              class="w-full px-5 py-4 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 resize-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
+              class="w-full px-5 py-4 rounded-lg bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 resize-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 outline-none focus:border-primary focus:bg-white dark:focus:bg-slate-600 transition-all font-medium"
             />
           </div>
 
@@ -262,17 +262,19 @@ onBeforeUnmount(() => {
             <div id="cf-turnstile-container" class="min-h-[70px] flex items-center" />
           </div>
 
-          <!-- Protection -->
-          <div class="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
-            <ShieldCheck :size="14" class="text-primary" />
-            <span>Protection anti-spam active</span>
+          <!-- Info réponse rapide -->
+          <div class="flex items-start gap-3 p-4 rounded-lg bg-primary/10 border border-1 border-primary">
+            <ShieldCheck :size="18" class="text-primary flex-shrink-0 mt-0.5" />
+            <p class="text-sm text-primary  font-medium ">
+              Nous revenons vers vous rapidement pour établir votre devis.
+            </p>
           </div>
 
           <!-- Bouton -->
           <button
             type="submit"
             :disabled="loading"
-            class="group relative w-full px-4 py-4 bg-primary hover:bg-primary-hover text-white font-bold text-base uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 overflow-hidden"
+            class="group relative w-full px-4 py-4 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold text-base uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 overflow-hidden"
           >
             <div class="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors"/>
             <span class="relative z-10">{{ loading ? 'Envoi en cours…' : 'Envoyer' }}</span>
