@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
     </div>
     
     <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
       <!-- Colonne gauche : Infos -->
       
