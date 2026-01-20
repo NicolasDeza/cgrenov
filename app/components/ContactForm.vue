@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue"
-import { Mail, MapPin, Send, ShieldCheck, Instagram, Facebook } from "lucide-vue-next"
+import { Mail, MapPin, Send, ShieldCheck, Instagram, Facebook, Info } from "lucide-vue-next"
 import { useContactForm } from "~/composables/useContactForm"
 
 const { form, errors, loading, success, submit } = useContactForm()
@@ -264,7 +264,7 @@ onBeforeUnmount(() => {
 
           <!-- Info réponse rapide -->
           <div class="flex items-start gap-3 p-4 rounded-lg bg-primary/10 border border-1 border-primary">
-            <ShieldCheck :size="18" class="text-primary flex-shrink-0 mt-0.5" />
+            <Info :size="20" class="text-primary flex-shrink-0 mt-0.5" />
             <p class="text-sm text-primary  font-medium ">
               Nous revenons vers vous rapidement pour établir votre devis.
             </p>
