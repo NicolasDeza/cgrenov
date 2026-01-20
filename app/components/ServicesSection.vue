@@ -55,48 +55,45 @@ const services = [
           :key="service.title"
           :to="`/services/${service.slug}`"
           :aria-label="`En savoir plus sur ${service.title}`"
-          class="group block overflow-hidden rounded-xl bg-white shadow-sm
-                 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+          class="group relative block overflow-hidden rounded-lg bg-white shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ">
+          
+          
           <!-- Image -->
-        <!-- Image -->
-<div class="relative aspect-[4/3] overflow-hidden ">
-  <img
-    :src="service.image"
-    :alt="service.title"
-    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-    loading="lazy"
-  >
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              :src="service.image"
+              :alt="service.title"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            >
 
-  <!-- Overlay hover -->
-  <div
-    class="absolute inset-0 flex items-center justify-center
-           bg-black/40 opacity-0 transition-opacity duration-300
-           group-hover:opacity-100"
-  >
-    <span
-  class="text-white font-semibold tracking-wide
-         translate-y-2 opacity-0 transition-all duration-300
-         group-hover:translate-y-0 group-hover:opacity-100"
->
-  Découvrir le service 
-</span>
-
-  </div>
-</div>
+            <!-- Overlay hover -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                <span class="text-white font-bold text-sm uppercase tracking-wider translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75">
+                  En savoir plus 
+                </span>
+              </div>
+            </div>
+          </div>
 
           <!-- Texte -->
-          <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2">
+          <div class="p-6 bg-white">
+            <h3 class="text-lg font-black text-slate-900 mb-3 uppercase tracking-tight group-hover:text-primary transition-colors">
               {{ service.title }}
             </h3>
 
-            <p class="text-sm text-gray-700 mb-3">
+            <p class="text-sm text-slate-600 leading-relaxed font-medium mb-4">
               {{ service.description }}
             </p>
 
-            <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
-              Service
-            </span>
+            <!-- Badge + Ligne décorative -->
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-bold text-primary bg-primary/10 uppercase tracking-wider">
+                Service
+              </span>
+              <div class="h-1 w-0 bg-primary group-hover:w-16 transition-all duration-300"/>
+            </div>
           </div>
         </NuxtLink>
       </div>
