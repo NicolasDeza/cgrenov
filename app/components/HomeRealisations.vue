@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-vue-next'
 
 const currentIndex = ref(0)
@@ -7,6 +7,7 @@ const touchStartX = ref(0)
 const touchStartY = ref(0)
 const touchEndX = ref(0)
 const isSwiping = ref(false)
+let autoplayInterval: NodeJS.Timeout | null = null
 
 const realisations = [
   {
@@ -54,7 +55,38 @@ const prev = () => {
 
 const goTo = (index: number) => {
   currentIndex.value = index
+  resetAutoplay()
 }
+
+/* =====================
+   Autoplay
+===================== */
+
+const startAutoplay = () => {
+  autoplayInterval = setInterval(() => {
+    next()
+  }, 3200) // 5 secondes
+}
+
+const stopAutoplay = () => {
+  if (autoplayInterval) {
+    clearInterval(autoplayInterval)
+    autoplayInterval = null
+  }
+}
+
+const resetAutoplay = () => {
+  stopAutoplay()
+  startAutoplay()
+}
+
+onMounted(() => {
+  startAutoplay()
+})
+
+onUnmounted(() => {
+  stopAutoplay()
+})
 
 /* =====================
    Swipe mobile
@@ -95,6 +127,7 @@ const handleTouchEnd = () => {
     } else {
       prev()
     }
+    resetAutoplay()
   }
 
   // reset
@@ -128,7 +161,7 @@ const handleTouchEnd = () => {
       </header>
 
       <!-- Carousel -->
-      <div class="relative max-w-4xl mx-auto" role="region" aria-label="Carousel de nos réalisations">
+      <div class="relative max-w-6xl mx-auto" role="region" aria-label="Carousel de nos réalisations">
         <!-- Card Container -->
         <div 
           class="overflow-hidden" 
@@ -150,7 +183,7 @@ const handleTouchEnd = () => {
               <span class="sr-only">Projet {{ currentIndex + 1 }} sur {{ realisations.length }}</span>
               
               <!-- Card -->
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden mx-2 flex flex-col md:flex-row max-h-none md:max-h-[400px]">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden mx-2 flex flex-col md:flex-row max-h-none md:max-h-[500px]">
                 <!-- Image -->
                 <div class="relative md:w-2/5 h-64 md:h-auto">
                   <NuxtImg
@@ -161,21 +194,22 @@ const handleTouchEnd = () => {
                 </div>
 
                 <!-- Content -->
-                <div class="p-8 md:w-3/5 flex flex-col justify-center">
-                  <span class="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full w-fit mb-3">
+                <div class="p-8 md:p-12 md:w-3/5 flex flex-col justify-center">
+                  <span class="inline-block text-xs md:text-sm font-semibold text-primary bg-primary/10 px-3 md:px-4 py-1 md:py-1.5 rounded-full w-fit mb-3 md:mb-4">
                     {{ realisation.date }}
                   </span>
                   
-                  <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 class="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                     {{ realisation.title }}
                   </h3>
                   
-                  <div class="flex items-center gap-2 text-gray-600 text-sm mb-4">
-                    <MapPin :size="16" class="text-primary" aria-hidden="true" />
+                  <div class="flex items-center gap-2 text-gray-600 text-sm md:text-base mb-4 md:mb-5">
+                    <MapPin :size="16" class="md:hidden text-primary" aria-hidden="true" />
+                    <MapPin :size="18" class="hidden md:block text-primary" aria-hidden="true" />
                     {{ realisation.location }}
                   </div>
                   
-                  <p class="text-gray-700 leading-relaxed">
+                  <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     {{ realisation.description }}
                   </p>
                 </div>
@@ -188,7 +222,7 @@ const handleTouchEnd = () => {
         <button
           class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-primary text-gray-800 hover:text-white rounded-full p-3 shadow-lg transition-all hover:scale-110 z-10"
           aria-label="Projet précédent"
-          @click="prev"
+          @click="prev(); resetAutoplay()"
         >
           <ChevronLeft :size="24" aria-hidden="true" />
         </button>
@@ -196,7 +230,7 @@ const handleTouchEnd = () => {
         <button
           class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-primary text-gray-800 hover:text-white rounded-full p-3 shadow-lg transition-all hover:scale-110 z-10"
           aria-label="Projet suivant"
-          @click="next"
+          @click="next(); resetAutoplay()"
         >
           <ChevronRight :size="24" aria-hidden="true" />
         </button>

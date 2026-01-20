@@ -39,7 +39,6 @@ useSeoMeta({
     <HeroContactBar/>
     <ServicesSection/>
     <WhyUsSection />
-   
     <SplitSection/>
     <HomeRealisations/>
   </div>
