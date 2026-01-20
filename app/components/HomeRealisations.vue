@@ -106,8 +106,13 @@ const handleTouchEnd = () => {
 
 
 <template>
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-[1440px] mx-auto px-6">
+  <section class="py-16 md:py-24 bg-white relative overflow-hidden">
+    <!-- Background briques SVG -->
+    <!-- <div class="absolute inset-0 opacity-40 pointer-events-none">
+      <div class="absolute inset-0 w-full h-full" style="background-image: url('/images/bg/briques.svg'); background-size: 100px 100px; background-repeat: repeat;"/>
+    </div> -->
+    
+    <div class="max-w-[1440px] mx-auto px-6 relative z-10">
       <!-- Header -->
       <header class="mb-12 text-center">
         <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">

@@ -66,23 +66,21 @@ onBeforeUnmount(() => {
 })
 </script>
 
-
 <template>
   <section
     class="w-full bg-gradient-to-br from-slate-50 via-white to-slate-100  py-20 relative overflow-hidden"
     aria-label="Formulaire de contact"
   >
-    <!-- Motif construction en arrière-plan -->
-    <!-- <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none">
-      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 11px);"/>
-    </div> -->
+
+    <div class="absolute inset-0 opacity-35 pointer-events-none">
+      <div class="absolute inset-0 w-full h-full" style="background-image: url('/images/bg/briques.svg'); background-size: 100px 100px; background-repeat: repeat;"/>
+    </div>
     
     <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-        <!-- ===================== -->
-        <!-- Colonne gauche : Infos -->
-        <!-- ===================== -->
+      <!-- Colonne gauche : Infos -->
+      
         <div class="space-y-8">
           <div class="space-y-5">
             <!-- Badge -->
@@ -92,7 +90,7 @@ onBeforeUnmount(() => {
             </div>
 
             <!-- Titre -->
-            <h1 class="text-4xl sm:text-5xl  font-black text-slate-900 dark:text-white leading-tight">
+            <h1 class="text-4xl sm:text-5xl font-black text-slate-900 ">
               Votre projet de
               <span class=" mt-2 text-primary relative inline-block">
                 rénovation
@@ -191,9 +189,7 @@ onBeforeUnmount(() => {
           </div>
         </div>
 
-        <!-- ===================== -->
         <!-- Colonne droite : Form -->
-        <!-- ===================== -->
         <form
           class="relative p-8 lg:p-10 bg-white dark:bg-slate-800 shadow-2xl border-t-4 border-primary space-y-6"
           @submit.prevent="submit"
