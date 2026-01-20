@@ -1,6 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
+
+// Détecte si on est sur une section spécifique
+const currentHash = computed(() => route.hash);
 
 // Menu mobile gestion état
 const isMenuOpen = ref(false);
@@ -60,16 +65,16 @@ onUnmounted(() => {
           <NuxtLink
             to="/"
             class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
-            active-class="!border-primary !text-primary"
+            :class="{ '!border-primary !text-primary': route.path === '/' && !currentHash }"
           >
             Accueil
           </NuxtLink>
         </li>
          <li>
           <NuxtLink
-            to="/services"
+            to="/#services"
             class="hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
-            active-class="!border-primary !text-primary"
+            :class="{ '!border-primary !text-primary': currentHash === '#services' }"
           >
             Services
           </NuxtLink>
@@ -181,13 +186,13 @@ onUnmounted(() => {
           </li>
 
         <li>
-            <NuxtLink to="/contact" class="block py-2" @click="closeMenu">
+            <NuxtLink to="/#services" class="block py-2" @click="closeMenu">
               Serices
             </NuxtLink>
           </li>
 
          <li>
-            <NuxtLink to="/contact" class="block py-2" @click="closeMenu">
+            <NuxtLink to="/realisations" class="block py-2" @click="closeMenu">
               Réalisations
             </NuxtLink>
           </li>

@@ -137,7 +137,7 @@ const toggleSection = (section: string) => {
               </li>
               <li>
                 <NuxtLink
-                  to="#services"
+                  to="/#services"
                   class="text-foreground/60 hover:text-primary transition"
                 >
                   Services
