@@ -11,6 +11,9 @@ const currentHash = computed(() => route.hash);
 // Menu mobile gestion état
 const isMenuOpen = ref(false);
 
+// Dropdown services mobile
+const isServicesMobileOpen = ref(false);
+
 
 
 const toggleMenu = () => {
@@ -245,10 +248,57 @@ onUnmounted(() => {
             </NuxtLink>
           </li>
 
-        <li>
-            <NuxtLink to="/#services" class="block py-2" @click="closeMenu">
-              Serices
-            </NuxtLink>
+          <!-- Services mobile avec accordéon -->
+          <li>
+            <button
+              type="button"
+              class="flex items-center justify-between w-full py-2 text-left text-foreground"
+              @click="isServicesMobileOpen = !isServicesMobileOpen"
+            >
+              <span>Services</span>
+              <span
+                class="inline-block w-2 h-2 border-r-2 border-b-2 border-current rotate-45 transition-transform"
+                :class="{ 'rotate-[225deg]': isServicesMobileOpen }"
+              />
+            </button>
+            
+            <!-- Sous-menu Services -->
+            <Transition
+              enter-active-class="transition-all duration-200 ease-out"
+              enter-from-class="max-h-0 opacity-0"
+              enter-to-class="max-h-96 opacity-100"
+              leave-active-class="transition-all duration-200 ease-in"
+              leave-from-class="max-h-96 opacity-100"
+              leave-to-class="max-h-0 opacity-0"
+            >
+              <ul v-if="isServicesMobileOpen" class="ml-4 mt-1 space-y-1 overflow-hidden">
+                <li>
+                  <NuxtLink to="/#services" class="block py-2 text-sm text-primary font-semibold" @click="closeMenu">
+                    Tous nos services
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/services/toiture" class="block py-1.5 text-sm" @click="closeMenu">
+                    Toiture & couverture
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/services/renovation" class="block py-1.5 text-sm" @click="closeMenu">
+                    Rénovation générale
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/services/isolation" class="block py-1.5 text-sm" @click="closeMenu">
+                    Isolation & étanchéité
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink to="/services/exterieur" class="block py-1.5 text-sm" @click="closeMenu">
+                    Travaux extérieurs
+                  </NuxtLink>
+                </li>
+              </ul>
+            </Transition>
           </li>
 
          <li>
