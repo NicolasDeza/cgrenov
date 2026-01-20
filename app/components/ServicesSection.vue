@@ -5,28 +5,28 @@ const services = [
     description:
       "Rénovation, pose et entretien de toitures durables et étanches.",
     image: "/images/services/toiture.jpg",
-    slug: "toiture-couverture",
+    slug: "toiture",
   },
   {
     title: "Rénovation générale",
     description:
       "Travaux intérieurs et extérieurs pour valoriser votre habitation.",
     image: "/images/services/renovation.jpg",
-    slug: "renovation-generale",
+    slug: "renovation",
   },
   {
     title: "Isolation & étanchéité",
     description:
       "Amélioration du confort thermique et protection durable du bâtiment.",
     image: "/images/services/isolation.jpg",
-    slug: "isolation-etancheite",
+    slug: "isolation",
   },
   {
     title: "Travaux extérieurs",
     description:
       "Façades, corniches et finitions extérieures soignées.",
     image: "/images/services/exterieur.jpg",
-    slug: "travaux-exterieurs",
+    slug: "exterieur",
   },
   
 ];

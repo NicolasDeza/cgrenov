@@ -183,7 +183,7 @@ useHead({
         </p>
         <NuxtLink
           to="/contact"
-          class="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary font-bold text-lg uppercase tracking-wider hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+          class="inline-flex items-center rounded-lg gap-3 px-8 py-4 bg-white text-primary font-bold text-lg uppercase tracking-wider hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
         >
           Demander un devis gratuit
          
