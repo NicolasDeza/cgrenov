@@ -159,30 +159,28 @@ onBeforeUnmount(() => {
             <!-- Réseaux sociaux -->
             <div class="pt-4">
               <p class="text-sm font-bold text-slate-700  mb-4 uppercase tracking-wide">
-                Suivez nos réalisations
+                Suivez-nous
               </p>
 
-              <div class="flex gap-4">
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white  border-2 border-slate-200  hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  <Instagram :size="20" class="text-slate-700  group-hover:text-primary stroke-[2.5]" />
-                  <span class="font-bold text-sm text-slate-700 group-hover:text-primary">Instagram</span>
-                </a>
-
+              <div class="flex gap-3">
                 <a
                   href="https://www.facebook.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  class="group flex-1 flex items-center justify-center gap-2 px-4 py-3.5 bg-white  border-2 border-slate-200  hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-md hover:shadow-lg"
+                  class="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-100 hover:bg-primary transition-all duration-300 group"
                 >
-                  <Facebook :size="20" class="text-slate-700  group-hover:text-primary stroke-[2.5]" />
-                  <span class="font-bold text-sm text-slate-700 group-hover:text-primary">Facebook</span>
+                  <Facebook :size="20" class="text-slate-700 group-hover:text-white transition-colors" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  class="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-100 hover:bg-primary transition-all duration-300 group"
+                >
+                  <Instagram :size="20" class="text-slate-700 group-hover:text-white transition-colors" />
                 </a>
               </div>
             </div>
