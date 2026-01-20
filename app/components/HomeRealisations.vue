@@ -65,7 +65,7 @@ const goTo = (index: number) => {
 const startAutoplay = () => {
   autoplayInterval = setInterval(() => {
     next()
-  }, 3200) // 5 secondes
+  }, 3200)
 }
 
 const stopAutoplay = () => {
@@ -96,6 +96,7 @@ const handleTouchStart = (e: TouchEvent) => {
   const touch = e.touches.item(0)
   if (!touch) return
 
+  stopAutoplay()
   touchStartX.value = touch.clientX
   touchStartY.value = touch.clientY
   isSwiping.value = false
@@ -116,24 +117,22 @@ const handleTouchMove = (e: TouchEvent) => {
 }
 
 const handleTouchEnd = () => {
-  if (!isSwiping.value) return
-
   const swipeDistance = touchStartX.value - touchEndX.value
   const minSwipeDistance = 60
 
-  if (Math.abs(swipeDistance) > minSwipeDistance) {
+  if (isSwiping.value && Math.abs(swipeDistance) > minSwipeDistance) {
     if (swipeDistance > 0) {
       next()
     } else {
       prev()
     }
-    resetAutoplay()
   }
 
-  // reset
+  // reset et redémarrer l'autoplay
   touchStartX.value = 0
   touchEndX.value = 0
   isSwiping.value = false
+  resetAutoplay()
 }
 </script>
 
@@ -161,11 +160,14 @@ const handleTouchEnd = () => {
       </header>
 
       <!-- Carousel -->
-      <div class="relative max-w-6xl mx-auto" role="region" aria-label="Carousel de nos réalisations">
+      <div class="relative max-w-6xl mx-auto" role="region" aria-label="Carousel de nos réalisations" aria-roledescription="carousel">
         <!-- Card Container -->
         <div 
-          class="overflow-hidden" 
-          aria-live="polite"
+          class="overflow-hidden cursor-pointer " 
+          aria-live="off"
+          aria-atomic="false"
+          @mouseenter="stopAutoplay"
+          @mouseleave="resetAutoplay"
           @touchstart="handleTouchStart"
           @touchmove="handleTouchMove"
           @touchend="handleTouchEnd"
@@ -175,12 +177,15 @@ const handleTouchEnd = () => {
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
           >
             <div
-              v-for="realisation in realisations"
+              v-for="(realisation, idx) in realisations"
               :key="realisation.id"
               class="min-w-full"
+              role="group"
+              :aria-roledescription="`slide ${idx + 1} sur ${realisations.length}`"
+              :aria-hidden="currentIndex !== idx"
             >
               <!-- Screen reader announcement -->
-              <span class="sr-only">Projet {{ currentIndex + 1 }} sur {{ realisations.length }}</span>
+              <span class="sr-only" aria-live="polite" aria-atomic="true">Projet {{ currentIndex + 1 }} sur {{ realisations.length }}</span>
               
               <!-- Card -->
               <div class="bg-white rounded-xl shadow-lg overflow-hidden mx-2 flex flex-col md:flex-row max-h-none md:max-h-[500px]">
@@ -236,13 +241,17 @@ const handleTouchEnd = () => {
         </button>
 
         <!-- Indicators -->
-        <div class="flex justify-center gap-2 mt-8">
+        <div class="flex justify-center gap-2 mt-8" role="tablist" aria-label="Sélection du projet">
           <button
             v-for="(_, index) in realisations"
             :key="index"
+            role="tab"
             class="w-2 h-2 rounded-full transition-all duration-300"
             :class="currentIndex === index ? 'bg-primary w-8' : 'bg-gray-300 hover:bg-gray-400'"
             :aria-label="`Aller au projet ${index + 1}`"
+            :aria-selected="currentIndex === index"
+            :aria-current="currentIndex === index ? 'true' : undefined"
+            :tabindex="currentIndex === index ? 0 : -1"
             @click="goTo(index)"
           />
         </div>
