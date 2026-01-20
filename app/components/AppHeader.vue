@@ -14,7 +14,8 @@ const isMenuOpen = ref(false);
 // Dropdown services mobile
 const isServicesMobileOpen = ref(false);
 
-
+// Dropdown services desktop
+const isServicesDropdownOpen = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -78,20 +79,29 @@ onUnmounted(() => {
         </li>
         
         <li class="relative group">
-  <NuxtLink
-    to="/#services"
+  <button
+    type="button"
     class="inline-flex items-center gap-2 h-[24px] leading-[24px]
            hover:text-primary transition-colors
            pb-1 border-b-2 border-transparent font-semibold"
     :class="{ '!border-primary !text-primary': currentHash === '#services' }"
+    :aria-expanded="isServicesDropdownOpen"
+    aria-haspopup="true"
+    aria-label="Menu Services"
+    @mouseenter="isServicesDropdownOpen = true"
+    @mouseleave="isServicesDropdownOpen = false"
+    @focus="isServicesDropdownOpen = true"
+    @blur="isServicesDropdownOpen = false"
+    @click="$router.push('/#services')"
   >
     Services
     <!-- Chevron CSS -->
     <span
       class="inline-block w-2 h-2 border-r-2 border-b-2 border-current
-             rotate-45 "
+             rotate-45"
+      aria-hidden="true"
     />
-  </NuxtLink>
+  </button>
 
   <!-- Dropdown -->
   <div
@@ -99,22 +109,32 @@ onUnmounted(() => {
            bg-white dark:bg-slate-800
            rounded-lg shadow-xl border border-gray-200 dark:border-gray-700
            py-2
-           opacity-0 invisible
-           group-hover:opacity-100 group-hover:visible
            transition-all duration-150 z-50"
+    :class="{
+      'opacity-100 visible': isServicesDropdownOpen,
+      'opacity-0 invisible': !isServicesDropdownOpen
+    }"
+    role="menu"
+    aria-label="Sous-menu Services"
+    @mouseenter="isServicesDropdownOpen = true"
+    @mouseleave="isServicesDropdownOpen = false"
   >
     <NuxtLink
       to="/#services"
       class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+      role="menuitem"
+      tabindex="0"
     >
       Tous nos services
     </NuxtLink>
 
-    <div class="h-px bg-gray-200 dark:bg-gray-700 my-1" />
+    <div class="h-px bg-gray-200 dark:bg-gray-700 my-1" role="separator" />
 
     <NuxtLink
       to="/services/toiture"
       class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+      role="menuitem"
+      tabindex="0"
     >
       Toiture & couverture
     </NuxtLink>
@@ -122,6 +142,8 @@ onUnmounted(() => {
     <NuxtLink
       to="/services/renovation"
       class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+      role="menuitem"
+      tabindex="0"
     >
       Rénovation générale
     </NuxtLink>
@@ -129,6 +151,8 @@ onUnmounted(() => {
     <NuxtLink
       to="/services/isolation"
       class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+      role="menuitem"
+      tabindex="0"
     >
       Isolation & étanchéité
     </NuxtLink>
@@ -136,6 +160,8 @@ onUnmounted(() => {
     <NuxtLink
       to="/services/exterieur"
       class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
+      role="menuitem"
+      tabindex="0"
     >
       Travaux extérieurs
     </NuxtLink>
@@ -253,12 +279,16 @@ onUnmounted(() => {
             <button
               type="button"
               class="flex items-center justify-between w-full py-2 text-left text-foreground"
+              :aria-expanded="isServicesMobileOpen"
+              aria-controls="services-submenu"
+              aria-label="Afficher le sous-menu Services"
               @click="isServicesMobileOpen = !isServicesMobileOpen"
             >
               <span>Services</span>
               <span
                 class="inline-block w-2 h-2 border-r-2 border-b-2 border-current rotate-45 transition-transform"
                 :class="{ 'rotate-[225deg]': isServicesMobileOpen }"
+                aria-hidden="true"
               />
             </button>
             
@@ -271,7 +301,7 @@ onUnmounted(() => {
               leave-from-class="max-h-96 opacity-100"
               leave-to-class="max-h-0 opacity-0"
             >
-              <ul v-if="isServicesMobileOpen" class="ml-4 mt-1 space-y-1 overflow-hidden">
+              <ul v-if="isServicesMobileOpen" id="services-submenu" class="ml-4 mt-1 space-y-1 overflow-hidden">
                 <li>
                   <NuxtLink to="/#services" class="block py-2 text-sm text-primary font-semibold" @click="closeMenu">
                     Tous nos services
