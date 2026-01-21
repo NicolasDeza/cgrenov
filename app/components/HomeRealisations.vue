@@ -260,7 +260,7 @@ const handleTouchEnd = () => {
       <!-- CTA Button -->
       <div class="flex justify-center mt-12">
         <NuxtLink
-          to="/realisations"
+          to="/realisations/index"
           class="inline-flex items-center rounded-lg bg-primary px-8 py-4
                  font-bold text-white transition-all
                  hover:bg-primary/90 hover:scale-105 focus-visible:outline-none

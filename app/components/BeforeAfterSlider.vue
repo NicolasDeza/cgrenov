@@ -100,7 +100,7 @@ const startDrag = (e: PointerEvent) => {
 
           <div>
             <NuxtLink
-              to="/realisations"
+              to="/realisations/index"
               class="inline-block bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-hover hover:scale-105 transition-all duration-200"
             >
               Voir nos réalisations
