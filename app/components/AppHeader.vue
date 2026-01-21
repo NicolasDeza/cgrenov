@@ -202,7 +202,7 @@ onUnmounted(() => {
           to="/contact"
           class="hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover hover:scale-105 transition-transform"
         >
-          Contact
+          Contactez-nous
         </NuxtLink>
 
         <!-- Hamburger mobile -->
@@ -348,10 +348,10 @@ onUnmounted(() => {
           <li class="pt-2">
             <NuxtLink
               to="/contact"
-              class="inline-flex w-full justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition"
+              class="inline-flex w-full justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover transition"
               @click="closeMenu"
             >
-              Contact
+              Contactez-nous
             </NuxtLink>
           </li>
         </ul>

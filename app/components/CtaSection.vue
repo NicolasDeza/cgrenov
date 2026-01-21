@@ -18,7 +18,7 @@
         >
           <NuxtLink
             to="/contact"
-            class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-bold text-white transition hover:scale-105"
+            class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-bold text-white transition hover:scale-105 hover:bg-primary-hover"
           >
             Contactez-nous
           </NuxtLink>
