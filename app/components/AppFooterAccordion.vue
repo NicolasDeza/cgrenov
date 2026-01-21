@@ -222,6 +222,14 @@ const toggleSection = (section: string) => {
                   Mentions légales
                 </NuxtLink>
               </li>
+              <li>
+                <NuxtLink
+                  to="/legal/politique-confidentialite"
+                  class="text-foreground/60 hover:text-primary transition"
+                >
+                  Politique de confidentialité
+                </NuxtLink>
+              </li>
             </ul>
           </div>
         </nav>
