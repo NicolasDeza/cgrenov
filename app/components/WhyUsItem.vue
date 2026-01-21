@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div
-    class="group flex flex-col items-center text-center rounded-lg bg-white px-6 py-6 md:px-8 md:py-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+    class="group flex flex-col items-center text-center rounded-lg bg-white px-6 py-6 md:px-8 md:py-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg "
   >
     <!-- Icône -->
     <div
