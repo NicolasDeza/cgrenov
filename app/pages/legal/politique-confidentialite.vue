@@ -254,7 +254,7 @@ useSeoMeta({
             to="/"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white font-medium transition-colors"
           >
-            <span aria-hidden="true">←</span>
+      
             Retour à l'accueil
           </NuxtLink>
         </div>

@@ -151,7 +151,7 @@ onBeforeUnmount(() => {
                   Zone d’intervention
                 </p>
                 <p class="text-foreground  font-medium">
-                  Wallonie – Brabant wallon et environs
+                  Wallonie – Brabant wallon et Bruxelles
                 </p>
               </div>
             </div>

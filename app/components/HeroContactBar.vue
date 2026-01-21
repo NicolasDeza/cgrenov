@@ -41,7 +41,7 @@ import {
 
         <span class="hidden lg:inline-flex items-center gap-2 text-white/60">
           <MapPin :size="16" aria-hidden="true" />
-          Belgique – Brabant wallon & Wallonie
+          Belgique – Wallonie, Brabant Wallon & Bruxelles
         </span>
       </div>
 
