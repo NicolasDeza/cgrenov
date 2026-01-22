@@ -1,5 +1,20 @@
 <script setup>
 
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: useRequestURL().href,
+    },
+  ],
+})
+
+useSeoMeta({
+  title: "Nos réalisations",
+  description: "Découvrez nos chantiers de rénovation réalisés avec soin en Belgique : gros œuvre, isolation, toiture et finitions. Portfolio de nos projets.",
+  robots: "index, follow",
+})
+
 const storyblokApi = useStoryblokApi()
 
 const projects = ref([])

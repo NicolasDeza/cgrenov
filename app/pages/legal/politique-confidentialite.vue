@@ -1,4 +1,14 @@
 <script setup lang="ts">
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: useRequestURL().href,
+    },
+  ],
+})
+
 useSeoMeta({
   title: "Politique de Confidentialité",
   description: "Politique de confidentialité et protection des données personnelles",

@@ -1,4 +1,14 @@
 <script setup lang="ts">
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: useRequestURL().href,
+    },
+  ],
+})
+
 useSeoMeta({
   title: "Mentions Légales",
   description: "Informations légales et mentions obligatoires du site",

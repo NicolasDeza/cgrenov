@@ -2,9 +2,19 @@
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
-/* =========================
-  Types Storyblok (minimal & clean)
-========================= */
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: useRequestURL().href,
+    },
+  ],
+})
+
+
+
+
+  // Types Storyblok (minimal & clean)
 
 interface StoryblokImage {
   filename: string
@@ -29,9 +39,8 @@ interface StoryblokStory {
   content: StoryblokProjectContent
 }
 
-/* =========================
-  Fetch Story
-========================= */
+
+  // Fetch Story
 
 const route = useRoute()
 const storyblokApi = useStoryblokApi()
@@ -55,9 +64,8 @@ try {
   })
 }
 
-/* =========================
-  Computed
-========================= */
+
+  // Computed
 
 const content = computed<StoryblokProjectContent>(() => {
   return story.value?.content ?? {}
@@ -84,6 +92,17 @@ const galleryImages = computed<StoryblokImage[]>(() => {
     ? content.value.gallery
     : [content.value.gallery]
 })
+
+// SEO dynamique
+useSeoMeta({
+  title: computed(() => content.value.title || 'Réalisation'),
+  description: computed(() => {
+    const desc = descriptionText.value || `Projet de rénovation à ${content.value.location || ''} - ${content.value.year || ''}`
+    return desc.substring(0, 160)
+  }),
+  robots: "index, follow",
+})
+
 </script>
 
 <template>
