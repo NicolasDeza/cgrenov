@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 import {
   ShieldCheck,
   Clock,
   Home,
   Wrench,
 } from "lucide-vue-next";
+
+gsap.registerPlugin(ScrollTrigger)
+
+const sectionRef = ref<HTMLElement | null>(null)
+const cardsRef = ref<HTMLElement[]>([])
 
 const reasons = [
   {
@@ -28,15 +36,36 @@ const reasons = [
   {
     title: "Équipement professionnel",
     description:
-      "Du matériel de qualité pour garantir des résultats optimaux.",
+      "Du matériel de qualité professionnelle reconnue pour garantir des résultats optimaux.",
     icon: Wrench,
   },
 ];
+
+onMounted(() => {
+  if (!sectionRef.value) return
+
+  // Nettoyer les refs undefined/null
+  const validCards = cardsRef.value.filter(Boolean)
+
+  gsap.from(validCards, {
+    scrollTrigger: {
+      trigger: sectionRef.value,
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 32,
+    duration: 0.9,
+    ease: "power2.out",
+    stagger: 0.18,
+  })
+})
 
 </script>
 
 <template>
   <section
+  ref="sectionRef"
   class="w-full bg-[#F5F5F5] py-16 md:py-24 "
   aria-label="Pourquoi choisir CG Renov"
 >
@@ -83,14 +112,17 @@ const reasons = [
           </a>
         </div>
 
-        <!-- Petites cartes à droite -->
-        <WhyUsItem
-          v-for="reason in reasons"
+        <div
+          v-for="(reason, i) in reasons"
           :key="reason.title"
-          :title="reason.title"
-          :description="reason.description"
-          :icon="reason.icon"
-        />
+          :ref="el => el && (cardsRef[i] = el as HTMLElement)"
+        >
+          <WhyUsItem
+            :title="reason.title"
+            :description="reason.description"
+            :icon="reason.icon"
+          />
+        </div>
       </div>
     </div>
   </section>
