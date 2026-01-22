@@ -1,39 +1,64 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+
+const sectionRef = ref<HTMLElement | null>(null)
+const cardsRef = ref<HTMLElement[]>([])
+
 const services = [
   {
     title: "Toiture & couverture",
-    description:
-      "Rénovation, pose et entretien de toitures durables et étanches.",
+    description: "Rénovation, pose et entretien de toitures durables et étanches.",
     image: "/images/services/toiture.jpg",
     slug: "toiture",
   },
   {
     title: "Rénovation générale",
-    description:
-      "Travaux intérieurs et extérieurs pour valoriser votre habitation.",
+    description: "Travaux intérieurs et extérieurs pour valoriser votre habitation.",
     image: "/images/services/renovation.jpg",
     slug: "renovation",
   },
   {
     title: "Isolation & étanchéité",
-    description:
-      "Amélioration du confort thermique et protection durable du bâtiment.",
+    description: "Amélioration du confort thermique et protection durable du bâtiment.",
     image: "/images/services/isolation.jpg",
     slug: "isolation",
   },
   {
     title: "Travaux extérieurs",
-    description:
-      "Façades, corniches et finitions extérieures soignées.",
+    description: "Façades, corniches et finitions extérieures soignées.",
     image: "/images/services/exterieur.jpg",
     slug: "exterieur",
   },
-  
-];
+]
+
+onMounted(() => {
+  if (!sectionRef.value) return
+
+  // Nettoyer les refs undefined/null
+  const validCards = cardsRef.value.filter(Boolean)
+
+  gsap.from(validCards, {
+    scrollTrigger: {
+      trigger: sectionRef.value,
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 32,
+    duration: 1,
+    ease: "power2.out",
+    stagger: 0.26,
+  })
+})
 </script>
 
+
 <template>
-    <section id="services" aria-labelledby="services-title" class="py-16 md:py-24 bg-primary-bg">
+    <section id="services" ref="sectionRef" aria-labelledby="services-title" class="py-16 md:py-24 bg-primary-bg">
   <div class="max-w-[1440px] mx-auto px-4">
     <header class="mb-12 text-center">
       <h2 id="services-title" class="text-3xl md:text-5xl font-extrabold">
@@ -50,12 +75,15 @@ const services = [
 
        <!-- Cards -->
       <div class="pt-4 md:pt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        <NuxtLink
-          v-for="service in services"
+        <div
+          v-for="(service, i) in services"
           :key="service.title"
-          :to="`/services/${service.slug}`"
-          :aria-label="`En savoir plus sur ${service.title}`"
-          class="group relative block overflow-hidden rounded-lg bg-white shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ">
+          :ref="el => el && (cardsRef[i] = el as HTMLElement)"
+        >
+          <NuxtLink
+            :to="`/services/${service.slug}`"
+            :aria-label="`En savoir plus sur ${service.title}`"
+            class="group relative block overflow-hidden rounded-lg bg-white shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ">
           
           
           <!-- Image -->
@@ -96,6 +124,7 @@ const services = [
             </div>
           </div>
         </NuxtLink>
+        </div>
       </div>
   </div>
 </section>

@@ -2,7 +2,7 @@
 
 <template>
   <section
-    class="relative w-full flex justify-center items-center bg-[#0F172B] bg-[url('/images/hero.jpg')] bg-cover bg-center py-20 md:py-40 lg:py-[205px] "
+    class="relative w-full flex justify-center items-center bg-[#0F172B] bg-[url('/images/hero.jpg')] bg-cover bg-center py-20 md:py-40 lg:py-[190px] "
     aria-label="Section d'accueil"
   >
     <!-- Overlay sombre -->
@@ -16,13 +16,14 @@
       <h1
         class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
       >
-        Entreprise de rénovation
+        <span class="block text-primary text-6xl sm:text-7xl lg:text-8xl mb-2">CG RENOV</span>
+        <span class="block">Entreprise de rénovation</span>
       </h1>
 
       <!-- Sous-titre -->
       <p class="max-w-2xl text-lg sm:text-xl text-white/90 font-semibold">
-        <span class="text-primary font-bold">CG RENOV</span> accompagne les particuliers et professionnels dans leurs projets de rénovation,
-avec une expertise reconnue en toiture, couverture et travaux extérieurs.
+        Nous accompagnons les particuliers et professionnels dans leurs projets de rénovation,
+        avec une expertise reconnue en toiture, couverture et travaux extérieurs.
       </p>
 
       <!-- Actions -->
