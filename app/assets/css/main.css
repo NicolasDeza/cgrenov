@@ -15,10 +15,6 @@
     --primary-bg: 0 0% 100%; /* Blanc */
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   /* Focus global orange pour l'accessibilité */
   *:focus-visible {
     outline: 2px solid hsl(var(--primary));
@@ -37,4 +33,17 @@
     white-space: nowrap;
     border-width: 0;
   }
+}
+
+/* =============================
+   TRANSITIONS DE PAGE NUXT
+============================= */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s ease-in-out;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
 }

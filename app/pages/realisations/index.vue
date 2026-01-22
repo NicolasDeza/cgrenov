@@ -1,4 +1,5 @@
 <script setup>
+
 const storyblokApi = useStoryblokApi()
 
 const projects = ref([])
@@ -14,6 +15,8 @@ try {
   console.error('Erreur Storyblok:', error)
   projects.value = []
 }
+
+
 </script>
 
 <template>
