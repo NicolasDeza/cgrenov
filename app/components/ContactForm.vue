@@ -85,9 +85,9 @@ onBeforeUnmount(() => {
     aria-label="Formulaire de contact"
   >
 
-    <div class="absolute inset-0 opacity-35 pointer-events-none">
+    <!-- <div class="absolute inset-0 opacity-35 pointer-events-none">
       <div class="absolute inset-0 w-full h-full" style="background-image: url('/images/bg/briques.svg'); background-size: 100px 100px; background-repeat: repeat;"/>
-    </div>
+    </div> -->
     
     <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
