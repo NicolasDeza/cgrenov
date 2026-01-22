@@ -172,28 +172,36 @@ onBeforeUnmount(() => {
               </div>
             </div>
 
-            <!-- Localisation -->
             <div
-              class="flex items-center gap-4 p-4 rounded-xl
-                     bg-white/70 
-                     border border-foreground/10 
-                     hover:border-primary/30 hover:shadow-md
-                     transition-all duration-300"
-            >
+             class="flex items-center gap-4 p-4 rounded-xl
+                  bg-white/70
+                 border border-foreground/10
+                hover:border-primary/30 hover:shadow-md
+                transition-all duration-300"
+>
               <div class="p-3 rounded-lg bg-primary/10">
                 <MapPin :size="22" class="text-primary" />
               </div>
+
               <div>
-                <p
-                  class="text-xs font-medium text-foreground/50  uppercase tracking-wide mb-1"
-                >
-                  Zone d’intervention
-                </p>
-                <p class="text-foreground  font-medium">
-                  Wallonie – Brabant wallon et Bruxelles
-                </p>
-              </div>
-            </div>
+                 <p
+                 class="text-xs font-medium text-foreground/50 uppercase tracking-wide mb-1"
+                 >
+               Où nous trouver
+             </p>
+
+              <a
+              href="https://maps.app.goo.gl/Gd47QfF7WicDVSv6A"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-foreground font-medium hover:text-primary transition"
+              aria-label="Voir l'adresse sur Google Maps"
+              >
+           Rue D'Alvau 21 – Mont-Saint-Guibert
+            </a>
+         </div>
+     </div>
+
 
             <!-- Réseaux sociaux -->
             <div class="pt-4">
@@ -224,25 +232,7 @@ onBeforeUnmount(() => {
               </div>
             </div>
 
-            <!-- Google Maps -->
-            <div class="pt-6">
-              <p class="text-sm font-bold text-slate-700  mb-4 uppercase tracking-wide">
-                Où nous trouver
-              </p>
-              
-              <div class="relative rounded-lg overflow-hidden shadow-lg border-2 border-slate-200 h-64 transition-colors duration-300">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.5915512363454!2d4.619488177710046!3d50.63470407162796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c17e567790f019%3A0xe52938f69a4ed716!2sRue%20d&#39;Alvau%2021%2C%201435%20Mont-Saint-Guibert!5e0!3m2!1sfr!2sbe!4v1768941949844!5m2!1sfr!2sbe"
-                  width="100%"
-                  height="100%"
-                  style="border:0;"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  title="Localisation CG Renov - Rue de Ville-en-Hesbaye"
-                  class="w-full h-full"
-                />
-              </div>
-            </div>
+        
           </div>
         </div>
 
