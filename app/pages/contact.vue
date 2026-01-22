@@ -20,7 +20,7 @@ useSeoMeta({
   ogDescription:
     "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.",
   ogImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
-  ogUrl: "https://nuxt-starter-vitrine.vercel.app/",
+  ogUrl: useRequestURL().href,
   ogType: "website",
 
   twitterCard: "summary_large_image",
