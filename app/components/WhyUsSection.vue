@@ -57,7 +57,7 @@ onMounted(() => {
     y: 32,
     duration: 0.9,
     ease: "power2.out",
-    stagger: 0.2,
+    stagger: 0.21,
   })
 })
 
