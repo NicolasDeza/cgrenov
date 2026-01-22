@@ -1,4 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted } from "vue"
+import { gsap } from "gsap"
+
+const heroContent = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  if (heroContent.value) {
+    gsap.fromTo(heroContent.value.children,
+      {
+        autoAlpha: 0,
+        y: 30,
+      },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.15,
+      }
+    )
+  }
+})
+</script>
 
 <template>
   <section
@@ -10,7 +33,8 @@
     
     <!-- Wrapper 1440px pour le contenu -->
     <div
-      class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-left flex flex-col items-start gap-6"
+      ref="heroContent"
+      class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-left flex flex-col items-start gap-6 [&>*]:opacity-0"
     >
       <!-- Titre principal -->
       <h1

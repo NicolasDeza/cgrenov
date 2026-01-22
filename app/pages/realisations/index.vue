@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+import { ref, onMounted } from "vue"
+import { gsap } from "gsap"
 
 useHead({
   link: [
@@ -28,9 +30,31 @@ useSeoMeta({
   twitterImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
 })
 
+const heroContent = ref<HTMLElement | null>(null)
+
+// Types Storyblok
+interface StoryblokImage {
+  filename: string
+}
+
+interface StoryblokProjectContent {
+  title?: string
+  location?: string
+  year?: string | number
+  cover_image?: StoryblokImage
+}
+
+interface StoryblokProject {
+  uuid: string
+  slug: string
+  content?: StoryblokProjectContent
+}
+
+
+
 const storyblokApi = useStoryblokApi()
 
-const projects = ref([])
+const projects = ref<StoryblokProject[]>([])
 
 try {
   const { data } = await storyblokApi.get('cdn/stories', {
@@ -44,6 +68,23 @@ try {
   projects.value = []
 }
 
+onMounted(() => {
+  if (heroContent.value) {
+    gsap.fromTo(heroContent.value.children,
+      {
+        autoAlpha: 0,
+        y: 30,
+      },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.15,
+      }
+    )
+  }
+})
 
 </script>
 
@@ -63,7 +104,7 @@ try {
 
       <!-- Content -->
       <div class="relative z-10 h-full flex items-center justify-center">
-        <div class="max-w-6xl mx-auto px-4">
+        <div ref="heroContent" class="max-w-6xl mx-auto px-4 [&>*]:opacity-0">
           <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Nos <span class="text-orange-400">réalisations</span>
           </h1>

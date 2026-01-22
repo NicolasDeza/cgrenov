@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { gsap } from "gsap"
 
 useHead({
   link: [
@@ -43,6 +44,7 @@ const route = useRoute()
 const storyblokApi = useStoryblokApi()
 
 const story = ref<StoryblokStory | null>(null)
+const heroContent = ref<HTMLElement | null>(null)
 
 try {
   const { data } = await storyblokApi.get(
@@ -113,6 +115,24 @@ useSeoMeta({
   twitterImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
 })
 
+onMounted(() => {
+  if (heroContent.value) {
+    gsap.fromTo(heroContent.value.children,
+      {
+        autoAlpha: 0,
+        y: 30,
+      },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.15,
+      }
+    )
+  }
+})
+
 </script>
 
 <template>
@@ -131,7 +151,7 @@ useSeoMeta({
 
       <!-- Content -->
       <div class="relative z-10 h-full flex items-center justify-center">
-        <div class="text-center px-4">
+        <div ref="heroContent" class="text-center px-4 [&>*]:opacity-0">
           <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-3">
             {{ content.title }}
           </h1>
