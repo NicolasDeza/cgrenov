@@ -31,15 +31,15 @@ try {
       >
 
       <!-- Overlay -->
-      <div class="absolute inset-0 bg-black/50"/>
+      <div class="absolute inset-0 bg-black/60"/>
 
       <!-- Content -->
-      <div class="relative z-10 h-full flex items-center">
+      <div class="relative z-10 h-full flex items-center justify-center">
         <div class="max-w-6xl mx-auto px-4">
           <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Nos <span class="text-orange-400">réalisations</span>
           </h1>
-          <p class="max-w-xl text-white/90 text-lg font-semibold">
+          <p class="max-w-xl text-white text-lg font-semibold">
             Découvrez quelques-uns de nos chantiers réalisés avec soin,
             en Belgique, du gros œuvre aux finitions.
           </p>

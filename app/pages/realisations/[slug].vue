@@ -98,16 +98,16 @@ const galleryImages = computed<StoryblokImage[]>(() => {
       >
 
       <!-- Overlay -->
-      <div class="absolute inset-0 bg-black/50"/>
+      <div class="absolute inset-0 bg-black/60"/>
 
       <!-- Content -->
-      <div class="relative z-10 h-full flex items-end">
-        <div class="max-w-5xl mx-auto px-4 pb-12">
+      <div class="relative z-10 h-full flex items-center justify-center">
+        <div class="text-center px-4">
           <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-3">
             {{ content.title }}
           </h1>
 
-          <p class="text-white/90 text-lg">
+          <p class="text-white text-lg">
             {{ content.location }} • {{ content.year }}
           </p>
         </div>
