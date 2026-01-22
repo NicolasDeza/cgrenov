@@ -1,10 +1,23 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from "vue"
+import { ref, onMounted, onBeforeUnmount, watch } from "vue"
 import { Mail, MapPin, Send, ShieldCheck, Instagram, Facebook, Info } from "lucide-vue-next"
 import { useContactForm } from "~/composables/useContactForm"
 
 const { form, errors, loading, success, submit } = useContactForm()
 const config = useRuntimeConfig()
+
+const showToast = ref(false)
+
+// Afficher le toast quand success passe à true
+watch(success, (isSuccess) => {
+  if (isSuccess) {
+    showToast.value = true
+    // Auto-fermer après 5 secondes
+    setTimeout(() => {
+      showToast.value = false
+    }, 5000)
+  }
+}, { immediate: false })
 
 const widgetId = ref<string | null>(null)
 
@@ -298,19 +311,15 @@ onBeforeUnmount(() => {
             <span class="relative z-10">{{ loading ? 'Envoi en cours…' : 'Envoyer' }}</span>
             <Send v-if="!loading" :size="20" class="relative z-10 stroke-[2.5]" />
           </button>
-
-          <!-- Succès -->
-          <p
-            v-if="success"
-            role="status"
-            aria-live="polite"
-            class="p-5 bg-green-50  border-l-4 border-green-500 text-green-700  text-sm font-bold flex items-center gap-3"
-          >
-            <span class="text-xl">✓</span>
-            <span>Message envoyé ! Nous vous recontactons sous 48h.</span>
-          </p>
         </form>
       </div>
     </div>
+
+    <!-- Toast notification -->
+    <AppToast
+      :show="showToast"
+      message="Nous vous recontactons sous 48h."
+      @close="showToast = false"
+    />
   </section>
 </template>

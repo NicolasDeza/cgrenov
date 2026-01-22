@@ -47,9 +47,8 @@ export default defineNuxtConfig({
     },
   },
 
-  /* =========================
-   SEO GLOBAL (BASE) – Nuxt Starter
-   ========================= */
+  //  SEO GLOBAL (BASE) – Nuxt Starter
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
 

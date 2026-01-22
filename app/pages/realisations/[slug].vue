@@ -11,9 +11,6 @@ useHead({
   ],
 })
 
-
-
-
   // Types Storyblok (minimal & clean)
 
 interface StoryblokImage {
