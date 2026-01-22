@@ -1,7 +1,32 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+
 defineProps<{
   image?: string
 }>()
+
+const contentRef = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  if (!contentRef.value) return
+
+  gsap.from(contentRef.value.children, {
+    scrollTrigger: {
+      trigger: contentRef.value,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    x: 30,
+    duration: 0.8,
+    ease: "power2.out",
+    stagger: 0.15,
+  })
+})
 </script>
 
 <template>
@@ -22,7 +47,7 @@ defineProps<{
 
 
       <!-- Texte -->
-      <div class="flex flex-col justify-center px-6 py-20 lg:px-20  text-white lg:w-1/2">
+      <div ref="contentRef" class="flex flex-col justify-center px-6 py-20 lg:px-20  text-white lg:w-1/2">
         <h2 class="text-3xl md:text-4xl font-bold leading-tight">
           Prêt à démarrer
           <span class="text-primary">votre projet</span>
