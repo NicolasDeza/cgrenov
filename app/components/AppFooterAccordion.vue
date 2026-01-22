@@ -32,7 +32,7 @@ const toggleSection = (section: string) => {
     class="w-full border-t border-foreground/20 bg-primary-bg"
     aria-label="Pied de page"
   >
-    <div class="mx-auto max-w-[1440px] px-4 pt-12 pb-4 md:pb-6">
+    <div class="mx-auto max-w-[1440px] px-4 pt-8 md:pt-12 pb-4 md:pb-6">
       <!-- Grille responsive avec accordéon sur mobile -->
       <div class="grid gap-8 md:grid-cols-4">
         <!-- Colonne 1 : Branding (toujours visible) -->

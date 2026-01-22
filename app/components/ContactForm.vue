@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from "vue"
-import { Mail, MapPin, Send, ShieldCheck, Instagram, Facebook, Info } from "lucide-vue-next"
+import { Mail, MapPin, Send, ShieldCheck, Instagram, Facebook, Info, Phone } from "lucide-vue-next"
 import { useContactForm } from "~/composables/useContactForm"
 
 const { form, errors, loading, success, submit } = useContactForm()
@@ -142,6 +142,32 @@ onBeforeUnmount(() => {
                   class="text-foreground  font-medium hover:text-primary transition"
                 >
                   cyrilgrandhenry@gmail.com
+                </a>
+              </div>
+            </div>
+
+             <!-- Téléphone -->
+            <div
+              class="flex items-center gap-4 p-4 rounded-xl
+                     bg-white/70 
+                     border border-foreground/10 
+                     hover:border-primary/30 hover:shadow-md
+                     transition-all duration-300"
+            >
+              <div class="p-3 rounded-lg bg-primary/10">
+                <Phone :size="22" class="text-primary" />
+              </div>
+              <div>
+                <p
+                  class="text-xs font-medium text-foreground/50  uppercase tracking-wide mb-1"
+                >
+                  Téléphone
+                </p>
+                <a
+                  href="tel:+32493329794"
+                  class="text-foreground  font-medium hover:text-primary transition"
+                >
+                  +32 493 32 97 94
                 </a>
               </div>
             </div>
