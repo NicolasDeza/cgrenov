@@ -12,10 +12,10 @@ const currentHash = computed(() => route.hash);
 const isMenuOpen = ref(false);
 
 // Dropdown services mobile
-const isServicesMobileOpen = ref(false);
+// const isServicesMobileOpen = ref(false);
 
 // Dropdown services desktop
-const isServicesDropdownOpen = ref(false);
+// const isServicesDropdownOpen = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -78,95 +78,18 @@ onUnmounted(() => {
           </NuxtLink>
         </li>
         
-        <li class="relative group">
-  <button
-    type="button"
-    class="inline-flex items-center gap-2 h-[24px] leading-[24px]
-           hover:text-primary transition-colors
-           pb-1 border-b-2 border-transparent font-semibold"
-    :class="{ '!border-primary !text-primary': currentHash === '#services' }"
-    :aria-expanded="isServicesDropdownOpen"
-    aria-haspopup="true"
-    aria-label="Menu Services"
-    @mouseenter="isServicesDropdownOpen = true"
-    @mouseleave="isServicesDropdownOpen = false"
-    @focus="isServicesDropdownOpen = true"
-    @blur="isServicesDropdownOpen = false"
-    @click="$router.push('/#services')"
-  >
-    Services
-    <!-- Chevron CSS -->
-    <span
-      class="inline-block w-2 h-2 border-r-2 border-b-2 border-current
-             rotate-45"
-      aria-hidden="true"
-    />
-  </button>
+        <li>
+          <NuxtLink
+            to="/#services"
+            class="inline-flex items-center h-[24px] leading-[24px]
+            hover:text-primary transition-colors
+            pb-1 border-b-2 border-transparent font-semibold"
+            :class="{ '!border-primary !text-primary': currentHash === '#services' }"
+          >
+            Services
+          </NuxtLink>
+        </li>
 
-  <!-- Dropdown -->
-  <div
-    class="absolute left-0 top-full mt-3 w-64
-           bg-white dark:bg-slate-800
-           rounded-lg shadow-xl border border-gray-200 dark:border-gray-700
-           py-2
-           transition-all duration-150 z-50"
-    :class="{
-      'opacity-100 visible': isServicesDropdownOpen,
-      'opacity-0 invisible': !isServicesDropdownOpen
-    }"
-    role="menu"
-    aria-label="Sous-menu Services"
-    @mouseenter="isServicesDropdownOpen = true"
-    @mouseleave="isServicesDropdownOpen = false"
-  >
-    <NuxtLink
-      to="/#services"
-      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
-      role="menuitem"
-      tabindex="0"
-    >
-      Tous nos services
-    </NuxtLink>
-
-    <div class="h-px bg-gray-200 dark:bg-gray-700 my-1" role="separator" />
-
-    <NuxtLink
-      to="/services/toiture"
-      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
-      role="menuitem"
-      tabindex="0"
-    >
-      Toiture & couverture
-    </NuxtLink>
-
-    <NuxtLink
-      to="/services/renovation"
-      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
-      role="menuitem"
-      tabindex="0"
-    >
-      Rénovation générale
-    </NuxtLink>
-
-    <NuxtLink
-      to="/services/isolation"
-      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
-      role="menuitem"
-      tabindex="0"
-    >
-      Isolation & étanchéité
-    </NuxtLink>
-
-    <NuxtLink
-      to="/services/exterieur"
-      class="block px-4 py-2.5 text-sm hover:bg-primary/10 hover:text-primary transition"
-      role="menuitem"
-      tabindex="0"
-    >
-      Travaux extérieurs
-    </NuxtLink>
-  </div>
-</li>
 
 
          <li>
@@ -274,62 +197,16 @@ onUnmounted(() => {
             </NuxtLink>
           </li>
 
-          <!-- Services mobile avec accordéon -->
-          <li>
-            <button
-              type="button"
-              class="flex items-center justify-between w-full py-2 text-left text-foreground"
-              :aria-expanded="isServicesMobileOpen"
-              aria-controls="services-submenu"
-              aria-label="Afficher le sous-menu Services"
-              @click="isServicesMobileOpen = !isServicesMobileOpen"
+         <li>
+          <NuxtLink
+            to="/#services"
+            class="block py-2"
+            @click="closeMenu"
             >
-              <span>Services</span>
-              <span
-                class="inline-block w-2 h-2 border-r-2 border-b-2 border-current rotate-45 transition-transform"
-                :class="{ 'rotate-[225deg]': isServicesMobileOpen }"
-                aria-hidden="true"
-              />
-            </button>
-            
-            <!-- Sous-menu Services -->
-            <Transition
-              enter-active-class="transition-all duration-200 ease-out"
-              enter-from-class="max-h-0 opacity-0"
-              enter-to-class="max-h-96 opacity-100"
-              leave-active-class="transition-all duration-200 ease-in"
-              leave-from-class="max-h-96 opacity-100"
-              leave-to-class="max-h-0 opacity-0"
-            >
-              <ul v-if="isServicesMobileOpen" id="services-submenu" class="ml-4 mt-1 space-y-1 overflow-hidden">
-                <li>
-                  <NuxtLink to="/#services" class="block py-2 text-sm text-primary font-semibold" @click="closeMenu">
-                    Tous nos services
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/services/toiture" class="block py-1.5 text-sm" @click="closeMenu">
-                    Toiture & couverture
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/services/renovation" class="block py-1.5 text-sm" @click="closeMenu">
-                    Rénovation générale
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/services/isolation" class="block py-1.5 text-sm" @click="closeMenu">
-                    Isolation & étanchéité
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink to="/services/exterieur" class="block py-1.5 text-sm" @click="closeMenu">
-                    Travaux extérieurs
-                  </NuxtLink>
-                </li>
-              </ul>
-            </Transition>
-          </li>
+            Services
+            </NuxtLink>
+             </li>
+
 
          <li>
             <NuxtLink to="/realisations" class="block py-2" @click="closeMenu">

@@ -11,29 +11,55 @@ const cardsRef = ref<HTMLElement[]>([])
 const services = [
   {
     title: "Toiture & couverture",
-    description: "Rénovation, pose et entretien de toitures durables et étanches.",
+    description: "Pose, rénovation et entretien de toitures durables et étanches.",
     image: "/images/services/toiture.jpg",
     slug: "toiture",
   },
   {
-    title: "Rénovation générale",
-    description: "Travaux intérieurs et extérieurs pour valoriser votre habitation.",
-    image: "/images/services/renovation.jpg",
-    slug: "renovation",
+    title: "Façades & bardage",
+    description: "Rénovation de façades et pose de bardages pour une protection durable.",
+    image: "/images/services/bardage.jpg",
+    slug: "facade",
   },
   {
     title: "Isolation & étanchéité",
-    description: "Amélioration du confort thermique et protection durable du bâtiment.",
+    description: "Amélioration du confort thermique et protection du bâtiment.",
     image: "/images/services/isolation.jpg",
     slug: "isolation",
   },
   {
-    title: "Travaux extérieurs",
-    description: "Façades, corniches et finitions extérieures soignées.",
-    image: "/images/services/exterieur.jpg",
-    slug: "exterieur",
+    title: "Ossature & extensions",
+    description: "Construction d’annexes, extensions et structures en ossature bois.",
+    image: "/images/services/ossature.jpg",
+    slug: "",
   },
+  {
+    title: "Maçonnerie générale",
+    description: "Maçonnerie pour tous types de projets intérieurs et extérieurs.",
+    image: "/images/services/maconnerie.jpg",
+    slug: "maconnerie",
+  },
+  {
+    title: "Châssis & menuiseries",
+    description: "Pose et remplacement de châssis et menuiseries extérieures.",
+    image: "/images/services/chassis.jpg",
+    slug: "chassis",
+  },
+  {
+    title: "Dépannage",
+    description: "Interventions rapides en cas d’urgence, sous 24h si possible.",
+    image: "/images/services/depannage.jpg",
+    slug: "depannage",
+  },
+  {
+  title: "Ramonage & tubage",
+  description: "Ramonage et tubage de cheminées pour une installation sûre et conforme.",
+  image: "/images/services/ramonage.jpg",
+  slug: "ramonage",
+}
+  
 ]
+
 
 onMounted(() => {
   if (!sectionRef.value) return
