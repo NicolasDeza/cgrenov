@@ -47,6 +47,12 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    server: {
+      allowedHosts: true,
+    },
+  },
+
   //  SEO GLOBAL (BASE) – Nuxt Starter
 
   app: {

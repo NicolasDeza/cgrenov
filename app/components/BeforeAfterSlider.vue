@@ -13,13 +13,19 @@ const updatePosition = (clientX: number) => {
 }
 
 const startDrag = (e: PointerEvent) => {
+  if (!container.value) return
+
+  // Capture du doigt / pointer
+  container.value.setPointerCapture(e.pointerId)
+
   updatePosition(e.clientX)
 
   const move = (event: PointerEvent) => {
     updatePosition(event.clientX)
   }
 
-  const stop = () => {
+    const stop = () => {
+    container.value?.releasePointerCapture(e.pointerId)
     window.removeEventListener('pointermove', move)
     window.removeEventListener('pointerup', stop)
   }
@@ -36,7 +42,7 @@ const startDrag = (e: PointerEvent) => {
         <!-- Partie Before/After (gauche) -->
         <div
           ref="container"
-          class="relative w-full overflow-hidden rounded-xl shadow-lg select-none cursor-ew-resize"
+          class="relative w-full overflow-hidden rounded-xl shadow-lg select-none cursor-ew-resize touch-none"
           @pointerdown.prevent="startDrag"
         >
           <!-- Badge Chantier Récent -->

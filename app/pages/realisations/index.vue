@@ -93,11 +93,12 @@ onMounted(() => {
     <!-- HERO -->
     <section class="relative h-[420px] md:h-[520px] w-full">
       <!-- Image background -->
-      <img
+      <NuxtImg
         src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-        alt=""
         class="absolute inset-0 h-full w-full object-cover"
-      >
+         priority
+       />
+
 
       <!-- Overlay -->
       <div class="absolute inset-0 bg-black/60"/>
@@ -129,12 +130,16 @@ onMounted(() => {
           class="group rounded-xl overflow-hidden border bg-white hover:shadow-lg transition-shadow"
         >
           <div class="relative h-56 w-full overflow-hidden">
-            <img
-              v-if="project.content?.cover_image?.filename"
-              :src="project.content.cover_image.filename"
-              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-              alt=""
-            >
+            <NuxtImg
+  v-if="project.content?.cover_image?.filename"
+  :src="project.content.cover_image.filename"
+  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+  alt=""
+  loading="lazy"
+  sizes="(max-width: 640px) 100vw,
+         (max-width: 1024px) 50vw,
+         33vw"
+/>
             
             <!-- Overlay + Texte "Découvrir" -->
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">

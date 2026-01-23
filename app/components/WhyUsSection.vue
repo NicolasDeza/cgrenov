@@ -85,7 +85,7 @@ onMounted(() => {
 
         <div class="text-right shrink-0">
           <p class="text-2xl md:text-3xl font-bold text-primary">+32 493 32 97 94</p>
-          <p class="mt-1 text-sm text-gray-600 italic">Cyril Grand Henry - Patron</p>
+          
         </div>
       </header>
 

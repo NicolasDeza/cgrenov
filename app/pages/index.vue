@@ -5,6 +5,12 @@
       rel: "canonical",
       href: useRequestURL().href, 
     },
+    {
+      rel: "preload",
+      as: "image",
+      href: "/images/hero.jpg",
+    },
+    
   ],
 });
 
