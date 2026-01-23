@@ -58,9 +58,8 @@ const goTo = (index: number) => {
   resetAutoplay()
 }
 
-/* =====================
-   Autoplay
-===================== */
+
+  //  Autoplay
 
 const startAutoplay = () => {
   autoplayInterval = setInterval(() => {
@@ -88,9 +87,8 @@ onUnmounted(() => {
   stopAutoplay()
 })
 
-/* =====================
-   Swipe mobile
-===================== */
+
+  //  Swipe mobile
 
 const handleTouchStart = (e: TouchEvent) => {
   const touch = e.touches.item(0)
