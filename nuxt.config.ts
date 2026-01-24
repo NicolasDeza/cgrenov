@@ -5,20 +5,15 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxt/image",
-    "@nuxtjs/color-mode",
-    "@storyblok/nuxt",
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/color-mode"],
 
   // Storyblock (CMS)
-  storyblok: {
-    accessToken: process.env.STORYBLOK_API_TOKEN,
-    apiOptions: {
-      region: "eu",
-    },
-  },
+  // storyblok: {
+  //   accessToken: process.env.STORYBLOK_API_TOKEN,
+  //   apiOptions: {
+  //     region: "eu",
+  //   },
+  // },
 
   // Dark mode
   colorMode: {
@@ -43,7 +38,7 @@ export default defineNuxtConfig({
     turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
     public: {
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY,
-      storyblokToken: process.env.STORYBLOK_API_TOKEN,
+      // storyblokToken: process.env.STORYBLOK_API_TOKEN,
     },
   },
 

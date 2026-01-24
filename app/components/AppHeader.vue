@@ -67,7 +67,7 @@ onUnmounted(() => {
       </NuxtLink>
 
       <!-- Navigation desktop -->
-      <ul class="hidden ml-12 md:flex items-center gap-8 font-semibold">
+      <ul class="hidden   md:flex items-center gap-8 font-semibold">
         <li>
           <NuxtLink
             to="/"
@@ -92,7 +92,7 @@ onUnmounted(() => {
 
 
 
-         <li>
+         <!-- <li>
           <NuxtLink
             to="/realisations"
             class="inline-flex items-center h-[24px] leading-[24px] hover:text-primary transition-colors pb-1 border-b-2 border-transparent"
@@ -100,7 +100,7 @@ onUnmounted(() => {
           >
             Réalisations
           </NuxtLink>
-        </li>
+        </li> -->
      
        
         <li>
@@ -208,11 +208,11 @@ onUnmounted(() => {
              </li>
 
 
-         <li>
+         <!-- <li>
             <NuxtLink to="/realisations" class="block py-2" @click="closeMenu">
               Réalisations
             </NuxtLink>
-          </li>
+          </li> -->
 
           
           <li>
