@@ -35,9 +35,8 @@
   }
 }
 
-/* =============================
-   TRANSITIONS DE PAGE NUXT
-============================= */
+/* TRANSITIONS DE PAGE NUXT */
+
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.12s ease-in-out;
@@ -46,4 +45,19 @@
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
+}
+
+/* Carousel partenaires */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.3333%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }

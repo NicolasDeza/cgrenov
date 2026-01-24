@@ -10,44 +10,54 @@ const cardsRef = ref<HTMLElement[]>([])
 
 const services = [
   {
-    title: "Toiture & couverture",
-    description: "Pose, rénovation et entretien de toitures durables et étanches.",
+    title: "Toiture - Tuiles & Ardoises",
+    description: "Travaux de toiture en tuiles et ardoises, adaptés à tous types de bâtiments et d’inclinaisons.",
     image: "/images/services/toiture.jpg",
   },
   {
-    title: "Façades & bardage",
-    description: "Rénovation de façades et pose de bardages pour une protection durable.",
-    image: "/images/services/bardage.jpg",
-  },
-  {
-    title: "Isolation & étanchéité",
-    description: "Amélioration du confort thermique et protection du bâtiment.",
+    title: "Isolation",
+    description: "Optimisez votre consommation d’énergie grâce à des solutions d’isolation adaptées à votre budget et à vos besoins.",
     image: "/images/services/isolation.jpg",
   },
   {
-    title: "Ossature & extensions",
-    description: "Construction d’annexes, extensions et structures en ossature bois.",
+    title: "Toiture plate",
+    description: "Spécialistes des toitures plates résidentielles et industrielles, avec des solutions durables et étanches.",
+    image: "/images/services/bardage.jpg",
+  },
+  {
+    title: "Ossature bois & Charpente",
+    description: "Passionnés par le travail du bois, nous réalisons charpentes et structures en ossature bois pour maisons et annexes.",
     image: "/images/services/ossature.jpg",
   },
   {
-    title: "Maçonnerie générale",
-    description: "Maçonnerie pour tous types de projets intérieurs et extérieurs.",
+    title: "Zinguerie",
+    description: "Réalisation et rénovation de zinguerie : corniches, gouttières, joints debout et finitions pour une étanchéité optimale.",
     image: "/images/services/maconnerie.jpg",
   },
   {
-    title: "Châssis & menuiseries",
-    description: "Pose et remplacement de châssis et menuiseries extérieures.",
+    title: "Ramonage & Tubage cheminée",
+    description: "Raminage et tubage de cheminée avec attestation assurance.",
     image: "/images/services/chassis.jpg",
   },
   {
-    title: "Dépannage",
-    description: "Interventions rapides en cas d’urgence, sous 24h si possible.",
+    title: "Maçonnerie & béton",
+    description: "Maçonnerie : blocs, briques, dalles de béton et autres travaux structurels.",
     image: "/images/services/depannage.jpg",
   },
   {
-    title: "Ramonage & tubage",
-    description: "Ramonage et tubage de cheminées pour une installation sûre et conforme.",
+    title: "Crépis sur isolant",
+    description: "Réalisation de crépis sur isolant et pose de briquettes de façade.",
     image: "/images/services/ramonage.jpg",
+  },
+  {
+    title: "Panneaux Photovoltaïques",
+    description: "Gagnez sur votre consommation d'énérgie en faisant appel à nous pour la pose de panneaux photovoltaïques.",
+    image: "/",
+  },
+  {
+    title: "Rénovation intérieure",
+    description: "Carrelage, parquet et plafonnage pour une rénovation intérieure complète.",
+    image: "/",
   },
 ]
 
@@ -78,7 +88,7 @@ onMounted(() => {
     aria-labelledby="services-title"
     class="py-16 md:py-24 bg-primary-bg"
   >
-    <div class="max-w-[1440px] mx-auto px-4">
+    <div class="max-w-[1240px] mx-auto px-4">
       <!-- Header -->
       <header class="mb-12 text-center">
         <h2 id="services-title" class="text-3xl md:text-5xl font-extrabold">
@@ -96,7 +106,7 @@ onMounted(() => {
       </header>
 
       <!-- Cards -->
-      <div class="pt-4 md:pt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="pt-4 md:pt-6 grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="(service, i) in services"
           :key="service.title"
@@ -104,10 +114,10 @@ onMounted(() => {
         >
           <div
             class="group relative block overflow-hidden rounded-lg bg-white shadow-md
-                   hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                   hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
           >
             <!-- Image -->
-            <div class="relative aspect-[4/3] overflow-hidden">
+            <div class="relative aspect-video overflow-hidden">
               <img
                 :src="service.image"
                 :alt="service.title"
@@ -115,7 +125,6 @@ onMounted(() => {
                 loading="lazy"
               >
 
-              <!-- Overlay visuel uniquement -->
               <div
                 class="absolute inset-0 bg-gradient-to-t
                        from-black/70 via-black/20 to-transparent
@@ -124,7 +133,7 @@ onMounted(() => {
               />
             </div>
 
-            <!-- Texte -->
+            <!-- Texte (même “feeling” qu’avant) -->
             <div class="p-6 bg-white">
               <h3
                 class="text-lg font-black text-slate-900 mb-3 uppercase tracking-tight
@@ -133,11 +142,12 @@ onMounted(() => {
                 {{ service.title }}
               </h3>
 
-              <p class="text-sm text-slate-600 leading-relaxed font-medium mb-4">
+              <!-- 🔧 Hauteur contrôlée pour éviter les cards “plus grandes” -->
+              <p class="text-sm text-slate-600 leading-relaxed font-medium mb-4 min-h-[72px]">
                 {{ service.description }}
               </p>
 
-              <!-- Badge + Ligne décorative -->
+              <!-- Badge + Ligne décorative (comme avant) -->
               <div class="flex items-center justify-between">
                 <span
                   class="inline-flex items-center px-3 py-1 text-xs font-bold
@@ -152,9 +162,11 @@ onMounted(() => {
                 />
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+

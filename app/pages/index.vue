@@ -47,6 +47,6 @@ useSeoMeta({
     <WhyUsSection />
     <BeforeAfterSlider/>
     <SplitSection/>
-    <HomeRealisations/>
+    <PartenairesCarousel/>
   </div>
   </template>
