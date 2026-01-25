@@ -22,42 +22,42 @@ const services = [
   {
     title: "Toiture plate",
     description: "Spécialistes des toitures plates résidentielles et industrielles, avec des solutions durables et étanches.",
-    image: "/images/services/bardage.jpg",
+    image: "/images/services/toit-plat.jpg",
   },
   {
     title: "Ossature bois & Charpente",
     description: "Passionnés par le travail du bois, nous réalisons charpentes et structures en ossature bois pour maisons et annexes.",
-    image: "/images/services/ossature.jpg",
+    image: "/images/services/ossature-bois.jpg",
   },
   {
     title: "Zinguerie",
     description: "Réalisation et rénovation de zinguerie : corniches, gouttières, joints debout et finitions pour une étanchéité optimale.",
-    image: "/images/services/maconnerie.jpg",
+    image: "/images/services/zinguerie.jpg",
   },
   {
     title: "Ramonage & Tubage cheminée",
     description: "Raminage et tubage de cheminée avec attestation assurance.",
-    image: "/images/services/chassis.jpg",
+    image: "/images/services/cheminee.jpg",
   },
   {
     title: "Maçonnerie & béton",
     description: "Maçonnerie : blocs, briques, dalles de béton et autres travaux structurels.",
-    image: "/images/services/depannage.jpg",
+    image: "/images/services/maçonnerie.jpg",
   },
   {
     title: "Crépis sur isolant",
     description: "Réalisation de crépis sur isolant et pose de briquettes de façade.",
-    image: "/images/services/ramonage.jpg",
+    image: "/images/services/crepis.jpg",
   },
   {
     title: "Panneaux Photovoltaïques",
     description: "Gagnez sur votre consommation d'énérgie en faisant appel à nous pour la pose de panneaux photovoltaïques.",
-    image: "/",
+    image: "/images/services/panneaux.jpg",
   },
   {
     title: "Rénovation intérieure",
     description: "Carrelage, parquet et plafonnage pour une rénovation intérieure complète.",
-    image: "/",
+    image: "/images/services/renovation.jpg",
   },
 ]
 
@@ -111,6 +111,9 @@ onMounted(() => {
           v-for="(service, i) in services"
           :key="service.title"
           :ref="el => el && (cardsRef[i] = el as HTMLElement)"
+          :class="{
+            'lg:col-start-2': services.length % 3 === 1 && i === services.length - 1
+          }"
         >
           <div
             class="group relative block overflow-hidden rounded-lg bg-white shadow-md
