@@ -29,7 +29,7 @@ onMounted(() => {
          flex items-center
          bg-[#0F172B] bg-[url('/images/hero.jpg')]
          bg-cover bg-center
-         py-16 sm:py-28 lg:py-36"
+         py-14 sm:py-28 lg:py-[150px]"
   aria-label="Section d'accueil"
 >
     <!-- Overlay sombre -->
@@ -38,13 +38,13 @@ onMounted(() => {
     <!-- Wrapper 1440px pour le contenu -->
     <div
       ref="heroContent"
-      class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-left flex flex-col items-start gap-6 [&>*]:opacity-0"
+      class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-left flex flex-col items-start gap-4 [&>*]:opacity-0"
     >
       <!-- Titre principal -->
       <h1
         class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
       >
-        <span class="block text-primary font-extrabold text-6xl sm:text-7xl  mb-2">CG RENOV</span>
+        <span class="block text-primary font-extrabold text-5xl sm:text-7xl  mb-2">CG RENOV</span>
         <span class="block">Entreprise de rénovation & Toiture</span>
       </h1>
 
