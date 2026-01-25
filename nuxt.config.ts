@@ -65,10 +65,10 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Starter Nuxt moderne pour créer des sites vitrines performants, SEO-ready et prêts pour la production.",
+            "CG Renov est une entreprise de rénovation en Belgique spécialisée en rénovation intérieure et extérieure.",
         },
         { name: "robots", content: "index, follow" },
-        { name: "author", content: "Nuxt Starter" },
+        { name: "author", content: "CG Renov" },
       ],
 
       link: [

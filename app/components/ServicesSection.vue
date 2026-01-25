@@ -93,7 +93,7 @@ onMounted(() => {
       <header class="mb-12 text-center">
         <h2 id="services-title" class="text-3xl md:text-5xl font-extrabold">
           Nos services de
-          <span class="text-primary">rénovation</span> &
+          <span class="text-primary">rénovation</span> et
           <span class="text-primary">toiture</span>
         </h2>
 

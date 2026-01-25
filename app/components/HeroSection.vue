@@ -45,7 +45,7 @@ onMounted(() => {
         class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
       >
         <span class="block text-primary font-extrabold text-5xl sm:text-7xl  mb-2">CG RENOV</span>
-        <span class="block">Entreprise de rénovation & Toiture</span>
+        <span class="block">Entreprise de rénovation et Toiture</span>
       </h1>
 
       <h2

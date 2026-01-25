@@ -10,25 +10,26 @@ useHead({
 });
 
 useSeoMeta({
-  title: "Contact - Nuxt Starter",
+  title: "Contact",
   description:
-    "Contactez-nous pour discuter de votre projet web et de vos besoins.",
+    "Contactez CG Renov pour vos travaux de rénovation en Belgique : rénovation intérieure, extérieure, transformation et finitions. Devis gratuit et réponse rapide.",
 
   robots: "index, follow",
 
-  ogTitle: "Nuxt Starter Vitrine",
+  ogTitle: "Contactez CG Renov – Travaux de rénovation en Belgique",
   ogDescription:
-    "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.",
-  ogImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
+    "Un projet de rénovation ? CG Renov vous accompagne pour vos travaux intérieurs et extérieurs partout en Belgique. Contactez-nous pour un devis gratuit.",
+  ogImage: "https://cgrenov.be/og-cgrenov.jpg",
   ogUrl: useRequestURL().href,
   ogType: "website",
 
   twitterCard: "summary_large_image",
-  twitterTitle: "Nuxt Starter Vitrine",
+  twitterTitle: "Contact – CG Renov",
   twitterDescription:
-    "Template Nuxt prêt pour la production : SEO, performance et design moderne.",
-  twitterImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
+    "Entreprise de rénovation en Belgique. Demandez votre devis gratuit avec CG Renov.",
+  twitterImage: "https://cgrenov.be/og-cgrenov.jpg",
 });
+
 </script>
 <template>
   <div>

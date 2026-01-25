@@ -17,25 +17,29 @@
 });
 
 useSeoMeta({
-  title: "Accueil",
+  title:
+    "Entreprise de rénovation et toiture en Belgique ",
   description:
-    "Template Nuxt moderne pour créer des sites vitrines performants, SEO-ready et prêts pour la production.",
+    "CG Renov est une entreprise de rénovation en Belgique spécialisée en rénovation intérieure et extérieure, transformations et finitions. Devis gratuit et accompagnement personnalisé.",
 
   robots: "index, follow",
 
-  ogTitle: "Nuxt Starter Vitrine",
+  ogTitle:
+    "CG Renov – Travaux de rénovation intérieure et extérieure en Belgique",
   ogDescription:
-    "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.",
-  ogImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
+    "Vous avez un projet de rénovation ? CG Renov vous accompagne pour vos travaux intérieurs et extérieurs partout en Belgique. Contactez-nous pour un devis gratuit.",
+  ogImage: "https://cgrenov.be/og-cgrenov.jpg",
   ogUrl: useRequestURL().href,
   ogType: "website",
 
   twitterCard: "summary_large_image",
-  twitterTitle: "Nuxt Starter Vitrine",
+  twitterTitle: "CG Renov – Entreprise de rénovation",
   twitterDescription:
-    "Template Nuxt prêt pour la production : SEO, performance et design moderne.",
-  twitterImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
+    "Entreprise de rénovation en Belgique. Rénovation intérieure, extérieure et transformations. Devis gratuit.",
+  twitterImage: "https://cgrenov.be/og-cgrenov.jpg",
 });
+
+
 </script>
 
 
