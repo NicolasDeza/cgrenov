@@ -1,4 +1,4 @@
-//!  CODE PRODUCTION
+//! CODE PRODUCTION
 import { z } from "zod";
 import nodemailer from "nodemailer";
 
@@ -8,12 +8,20 @@ const ContactSchema = z.object({
     .trim()
     .min(2, "Le nom doit contenir au moins 2 caractères")
     .max(100, "Le nom est trop long"),
+
   email: z
     .string()
     .trim()
     .toLowerCase()
     .email("Email invalide")
     .max(255, "L'email est trop long"),
+
+  phone: z
+    .string()
+    .trim()
+    .optional()
+    .refine((val) => !val || val.length >= 6, "Numéro de téléphone invalide"),
+
   message: z
     .string()
     .trim()
@@ -27,16 +35,17 @@ export default defineEventHandler(async (event) => {
 
   const { turnstileToken, ...data } = body;
 
-  // 1️ Vérifier Turnstile
-  const verify = await $fetch<{
-    success: boolean;
-  }>("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-    method: "POST",
-    body: new URLSearchParams({
-      secret: config.turnstileSecretKey,
-      response: turnstileToken,
-    }),
-  });
+  // 1️ Vérification Turnstile
+  const verify = await $fetch<{ success: boolean }>(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      body: new URLSearchParams({
+        secret: config.turnstileSecretKey,
+        response: turnstileToken,
+      }),
+    },
+  );
 
   if (!verify.success) {
     throw createError({
@@ -45,7 +54,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  // 2️ Validation Zod
+  // 2️ Validation Zod (sécurité backend)
   const parsed = ContactSchema.safeParse(data);
   if (!parsed.success) {
     throw createError({
@@ -54,8 +63,9 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const { name, email, message } = parsed.data;
+  const { name, email, phone, message } = parsed.data;
 
+  // 3️ Transport SMTP
   const transporter = nodemailer.createTransport({
     host: config.smtp.host,
     port: config.smtp.port,
@@ -68,19 +78,23 @@ export default defineEventHandler(async (event) => {
 
   try {
     await transporter.sendMail({
-      from: `"Portfolio Nicolas" <${config.mail.from}>`,
+      from: `"CG Renov" <${config.mail.from}>`,
       to: config.mail.to,
       replyTo: email,
       subject: `Nouveau message de ${name}`,
-      text: `Nom : ${name}
-Email : ${email}
 
-Message :
-${message}`,
+      text: `Nom : ${name}
+             Email : ${email}
+             Téléphone : ${phone || "Non renseigné"}
+
+            Message :
+            ${message}`,
+
       html: `
         <h2>Nouveau message via le site</h2>
         <p><strong>Nom :</strong> ${name}</p>
         <p><strong>Email :</strong> ${email}</p>
+        <p><strong>Téléphone :</strong> ${phone || "Non renseigné"}</p>
         <p><strong>Message :</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,

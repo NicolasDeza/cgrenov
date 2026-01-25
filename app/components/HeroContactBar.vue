@@ -29,12 +29,12 @@ import {
         <span class="hidden sm:block text-white/30" aria-hidden="true">•</span>
 
         <a
-          href="mailto:cyrilgrandhenry@gmail.com"
+          href="mailto:info@cgrenov.be"
           class="inline-flex items-center gap-2 hover:text-primary transition"
           aria-label="Envoyez-nous un email à cyrilgrandhenry@gmail.com"
         >
           <Mail :size="16" aria-hidden="true" />
-          cyrilgrandhenry@gmail.com
+          info@cgrenov.be
         </a>
 
         <span class="hidden lg:block text-white/30" aria-hidden="true">•</span>

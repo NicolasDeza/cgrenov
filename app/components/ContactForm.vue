@@ -138,10 +138,10 @@ onBeforeUnmount(() => {
                   Email
                 </p>
                 <a
-                  href="mailto:cyrilgrandhenry@gmail.com"
+                  href="mailto:info@cgrenov.be"
                   class="text-foreground  font-medium hover:text-primary transition"
                 >
-                  cyrilgrandhenry@gmail.com
+                  info@cgrenov.be
                 </a>
               </div>
             </div>
@@ -262,7 +262,7 @@ onBeforeUnmount(() => {
           <!-- Nom -->
           <div class="space-y-2">
             <label for="name" class="block text-sm font-bold text-slate-900  uppercase tracking-wide">
-              Nom complet
+              Prénom
             </label>
             <input
               id="name"
@@ -287,6 +287,22 @@ onBeforeUnmount(() => {
               required
               class="w-full px-5 py-2 rounded-lg bg-slate-50  border-2 border-slate-200 text-slate-900  placeholder:text-slate-400  outline-none focus:border-primary focus:bg-white  transition-all font-medium"
             >
+          </div>
+
+          <!-- Téléphone -->
+          <div class="space-y-2">
+           <label for="phone" class="block text-sm font-bold text-slate-900 uppercase tracking-wide">
+             Téléphone
+           </label>
+           <input
+             id="phone"
+             v-model="form.phone"
+             type="tel"
+             placeholder="+32 4xx xx xx xx"
+             class="w-full px-5 py-2 rounded-lg bg-slate-50 border-2 border-slate-200
+           text-slate-900 placeholder:text-slate-400 outline-none
+             focus:border-primary focus:bg-white transition-all font-medium"
+             >
           </div>
 
           <!-- Message -->
