@@ -3,10 +3,11 @@ import { ref, onMounted, onBeforeUnmount, nextTick } from "vue"
 import gsap from "gsap"
 
 const stack = [
-  { name: "Nuxt", src: "" },
-  { name: "Vue", src: "" },
-  { name: "Tailwind", src: "" },
-  { name: "Laravel", src: "" },
+  { name: "Velux", src: "/images/partenaires/velux-2.svg" },
+  { name: "Sani Mat Wavre", src: "/images/partenaires/sanimat.svg" },
+  { name: "Defrancq", src: "/images/partenaires/defrancq.svg" },
+  { name: "Adam Matériaux", src: "/images/partenaires/adam.png" },
+  
  
 ]
 
@@ -20,7 +21,7 @@ const setupMarquee = () => {
   tween?.kill()
   gsap.set(track.value, { x: 0 })
 
-  // IMPORTANT : on double dans le template => la moitié = une "boucle"
+  // On double dans le template => la moitié = une "boucle"
   const loopWidth = track.value.scrollWidth / 2
   if (!loopWidth) return
 
@@ -40,7 +41,7 @@ const setupMarquee = () => {
 
 onMounted(async () => {
   await nextTick()
-  // laisse une frame pour que le layout soit stable (fonts, etc.)
+  // Frame pour layout stable
   requestAnimationFrame(setupMarquee)
 
   window.addEventListener("resize", setupMarquee)
@@ -65,7 +66,7 @@ onBeforeUnmount(() => {
         <div class="mx-auto mt-6 h-1 w-32 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
       </header>
 
-    <div class="mx-auto max-w-[850px] px-6">
+    <div class="mx-auto max-w-[850px] px-6 mt-16">
       <div class="relative overflow-hidden">
         <div
           ref="track"
@@ -75,17 +76,15 @@ onBeforeUnmount(() => {
           <div
             v-for="(item, index) in [...stack, ...stack, ...stack]"
             :key="index"
-            class="flex flex-col items-center min-w-[120px] opacity-70 hover:opacity-100 transition"
+            class="flex flex-col items-center min-w-[150px]"
           >
-            <div class="flex items-center justify-center h-24 w-24 rounded-lg bg-gray-100 mb-2">
-              <span class="text-2xl font-bold text-gray-400">
-                {{ item.name.charAt(0) }}
-              </span>
-            </div>
-            <span class="text-sm text-gray-700">{{ item.name }}</span>
-          </div>
+            <div class="flex items-center justify-center h-24 w-30 sm:w-52 rounded-lg mb-2">
+              <template v-if="item.src">
+                <img :src="item.src" :alt="item.name" class="max-h-20 max-w-40 object-contain" >
+              </template>
+          
         </div>
       </div>
     </div>
-  </section>
+  </div></div></section>
 </template>
