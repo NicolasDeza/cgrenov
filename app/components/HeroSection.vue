@@ -25,11 +25,15 @@ onMounted(() => {
 
 <template>
   <section
-    class="relative w-full flex justify-center items-center bg-[#0F172B] bg-[url('/images/hero.jpg')] bg-cover bg-center py-20 md:py-40 lg:py-[190px] "
-    aria-label="Section d'accueil"
-  >
+  class="relative w-full
+         flex items-center
+         bg-[#0F172B] bg-[url('/images/hero.jpg')]
+         bg-cover bg-center
+         py-16 sm:py-28 lg:py-36"
+  aria-label="Section d'accueil"
+>
     <!-- Overlay sombre -->
-    <div class="absolute inset-0 bg-black/65"/>
+    <div class="absolute inset-0 bg-black/60"/>
     
     <!-- Wrapper 1440px pour le contenu -->
     <div
@@ -38,16 +42,23 @@ onMounted(() => {
     >
       <!-- Titre principal -->
       <h1
-        class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
+        class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
       >
-        <span class="block text-primary text-6xl sm:text-7xl lg:text-8xl mb-2">CG RENOV</span>
-        <span class="block">Entreprise de rénovation</span>
+        <span class="block text-primary font-extrabold text-6xl sm:text-7xl  mb-2">CG RENOV</span>
+        <span class="block">Entreprise de rénovation & Toiture</span>
       </h1>
 
+      <h2
+       class="mt-4 text-2xl sm:text-4xl font-bold text-white"
+        >
+        La passion dans chacune de nos réalisations
+          </h2>
+
       <!-- Sous-titre -->
-      <p class="max-w-2xl text-lg sm:text-xl text-white/90 font-semibold">
+      <p class="max-w-2xl text-base sm:text-xl text-white/90 font-semibold">
         Nous accompagnons les particuliers et professionnels dans leurs projets de rénovation,
-        avec une expertise reconnue en toiture, couverture et travaux extérieurs.
+  avec passion et exigence, grâce à une expertise reconnue en toiture, couverture
+  et travaux extérieurs.
       </p>
 
       <!-- Actions -->
