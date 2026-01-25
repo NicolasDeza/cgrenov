@@ -33,7 +33,7 @@ onMounted(() => {
   aria-label="Section d'accueil"
 >
     <!-- Overlay sombre -->
-    <div class="absolute inset-0 bg-black/60"/>
+    <div class="absolute inset-0 bg-black/55"/>
     
     <!-- Wrapper 1440px pour le contenu -->
     <div
