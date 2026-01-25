@@ -268,7 +268,7 @@ onBeforeUnmount(() => {
               id="name"
               v-model="form.name"
               type="text"
-              placeholder="Ex: Jean Dupont"
+              placeholder="Votre prénom"
               required
               class="w-full px-5 py-2 rounded-lg bg-slate-50  border-2 border-slate-200 text-slate-900  placeholder:text-slate-400  outline-none focus:border-primary focus:bg-white  transition-all font-medium"
             >
@@ -283,7 +283,7 @@ onBeforeUnmount(() => {
               id="email"
               v-model="form.email"
               type="email"
-              placeholder="votre@email.com"
+              placeholder="Votre@email.com"
               required
               class="w-full px-5 py-2 rounded-lg bg-slate-50  border-2 border-slate-200 text-slate-900  placeholder:text-slate-400  outline-none focus:border-primary focus:bg-white  transition-all font-medium"
             >
@@ -298,7 +298,7 @@ onBeforeUnmount(() => {
              id="phone"
              v-model="form.phone"
              type="tel"
-             placeholder="+32 4xx xx xx xx"
+             placeholder="04xx xx xx xx"
              class="w-full px-5 py-2 rounded-lg bg-slate-50 border-2 border-slate-200
            text-slate-900 placeholder:text-slate-400 outline-none
              focus:border-primary focus:bg-white transition-all font-medium"
