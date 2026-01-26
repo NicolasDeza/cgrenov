@@ -145,7 +145,7 @@ onMounted(() => {
                 {{ service.title }}
               </h3>
 
-              <!-- 🔧 Hauteur contrôlée pour éviter les cards “plus grandes” -->
+              
               <p class="text-sm text-slate-600 leading-relaxed font-medium mb-4 min-h-[72px]">
                 {{ service.description }}
               </p>
