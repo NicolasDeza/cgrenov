@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const container = ref<HTMLElement | null>(null)
 const sliderX = ref(50)
+const contentRef = ref<HTMLElement | null>(null)
 
 const updatePosition = (clientX: number) => {
   if (!container.value) return
@@ -24,7 +29,7 @@ const startDrag = (e: PointerEvent) => {
     updatePosition(event.clientX)
   }
 
-    const stop = () => {
+  const stop = () => {
     container.value?.releasePointerCapture(e.pointerId)
     window.removeEventListener('pointermove', move)
     window.removeEventListener('pointerup', stop)
@@ -33,7 +38,25 @@ const startDrag = (e: PointerEvent) => {
   window.addEventListener('pointermove', move)
   window.addEventListener('pointerup', stop)
 }
+
+onMounted(() => {
+  if (!contentRef.value) return
+
+  gsap.from(contentRef.value.children, {
+    scrollTrigger: {
+      trigger: contentRef.value,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    x: 30,
+    duration: 0.8,
+    ease: "power2.out",
+    stagger: 0.15,
+  })
+})
 </script>
+
 
 <template>
   <section class="w-full px-6 py-16 md:py-24">
@@ -89,7 +112,7 @@ const startDrag = (e: PointerEvent) => {
         </div>
 
         <!-- Partie Texte (droite) -->
-        <div class="space-y-6">
+        <div ref="contentRef" class="space-y-6">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Des rénovations visibles, durables et soignées
           </h2>
