@@ -66,10 +66,10 @@ onMounted(() => {
 <template>
   <section
   ref="sectionRef"
-  class="w-full bg-[#F5F5F5] py-16 md:py-24 "
+  class="w-full bg-[#F5F5F5] px-6 py-16 md:py-24"
   aria-label="Pourquoi choisir CG Renov"
 >
-    <div class="mx-auto max-w-[1440px] px-6">
+    <div class="mx-auto max-w-[1440px]">
       <!-- Titre -->
       <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div class="max-w-2xl">
