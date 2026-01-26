@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
           Découvrez nos <span class="text-primary">partenaires</span>
         </h2>
         <p class="mt-4 text-gray-700 max-w-2xl mx-auto text-medium md:text-lg font-semibold">
-          Des projets variés témoignant de notre savoir-faire et de notre engagement qualité.
+          Des partenaires de confiance, reconnus pour leur expertise dans le secteur du bâtiment.
         </p>
         <div class="mx-auto mt-6 h-1 w-32 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
       </header>
@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
           ref="track"
           class="flex w-max gap-12 will-change-transform"
         >
-          <!-- DOUBLE ICI (pas de clone DOM) -->
+          <!-- Triplage de la boucle -->
           <div
             v-for="(item, index) in [...stack, ...stack, ...stack]"
             :key="index"

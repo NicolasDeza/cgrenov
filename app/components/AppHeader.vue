@@ -44,7 +44,7 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="sticky top-0 z-50 w-full bg-primary-bg text-foreground border-b border-gray-200 transition-colors"
+    class="top-0 z-50 sticky w-full bg-primary-bg text-foreground border-b border-gray-200 transition-colors"
   >
     <nav
       class="max-w-[1440px] mx-auto px-4 flex items-center justify-between"
@@ -176,63 +176,55 @@ onUnmounted(() => {
 
     <!-- Menu mobile -->
     <Transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="opacity-0 -translate-y-2"
-      enter-to-class="opacity-100 translate-y-0"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="opacity-100 translate-y-0"
-      leave-to-class="opacity-0 -translate-y-2"
-    >
-      <div
-        v-if="isMenuOpen"
-        id="mobile-menu"
-        class="md:hidden bg-primary-bg border-t border-gray-200 "
-        role="region"
-        aria-label="Menu de navigation mobile"
-      >
-        <ul class="flex flex-col px-4 py-4 gap-1 text-sm font-medium">
-          <li>
-            <NuxtLink to="/" class="block py-2" @click="closeMenu">
-              Accueil
-            </NuxtLink>
-          </li>
+  enter-active-class="transition duration-200 ease-out"
+  enter-from-class="opacity-0 -translate-y-2"
+  enter-to-class="opacity-100 translate-y-0"
+  leave-active-class="transition duration-150 ease-in"
+  leave-from-class="opacity-100 translate-y-0"
+  leave-to-class="opacity-0 -translate-y-2"
+>
+  <div
+    v-if="isMenuOpen"
+    id="mobile-menu"
+    class="md:hidden absolute top-full left-0 w-full z-50
+           bg-primary-bg border-t border-gray-200"
+    role="region"
+    aria-label="Menu de navigation mobile"
+  >
+    <ul class="flex flex-col px-4 py-4 gap-1 text-sm font-medium">
+      <li>
+        <NuxtLink to="/" class="block py-2" @click="closeMenu">
+          Accueil
+        </NuxtLink>
+      </li>
 
-         <li>
-          <NuxtLink
-            to="/#services"
-            class="block py-2"
-            @click="closeMenu"
-            >
-            Services
-            </NuxtLink>
-             </li>
+      <li>
+        <NuxtLink to="/#services" class="block py-2" @click="closeMenu">
+          Services
+        </NuxtLink>
+      </li>
+
+      <li>
+        <NuxtLink to="/contact" class="block py-2" @click="closeMenu">
+          Contact
+        </NuxtLink>
+      </li>
+
+      <!-- CTA mobile -->
+      <li class="pt-2">
+        <NuxtLink
+          to="/contact"
+          class="inline-flex w-full justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover transition"
+          @click="closeMenu"
+        >
+          Contactez-nous
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
+</Transition>
 
 
-         <!-- <li>
-            <NuxtLink to="/realisations" class="block py-2" @click="closeMenu">
-              Réalisations
-            </NuxtLink>
-          </li> -->
 
-          
-          <li>
-            <NuxtLink to="/contact" class="block py-2" @click="closeMenu">
-              Contact
-            </NuxtLink>
-          </li>
-
-          <!-- CTA mobile -->
-          <li class="pt-2">
-            <NuxtLink
-              to="/contact"
-              class="inline-flex w-full justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover transition"
-              @click="closeMenu"
-            >
-              Contactez-nous
-            </NuxtLink>
-          </li>
-        </ul>
-      </div>
-    </Transition>
   </header>
 </template>

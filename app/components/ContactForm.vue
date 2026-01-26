@@ -81,7 +81,7 @@ onBeforeUnmount(() => {
 
 <template>
   <section
-    class="w-full bg-gradient-to-br from-slate-50 via-white to-slate-100  py-20 relative overflow-hidden"
+    class="w-full bg-gradient-to-br from-slate-50 via-white to-slate-100  py-12 md:py-24 relative overflow-hidden"
     aria-label="Formulaire de contact"
   >
 
