@@ -37,7 +37,7 @@ const startDrag = (e: PointerEvent) => {
 
 <template>
   <section class="w-full px-6 py-16 md:py-24">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-[1440px] mx-auto">
       <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
         <!-- Partie Before/After (gauche) -->
         <div

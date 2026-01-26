@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
           ref="track"
           class="flex w-max gap-12 will-change-transform"
         >
-          <!-- Triplage de la boucle -->
+          <!-- Triplage de boucle  -->
           <div
             v-for="(item, index) in [...stack, ...stack, ...stack]"
             :key="index"

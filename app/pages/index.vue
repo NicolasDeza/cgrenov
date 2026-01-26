@@ -46,6 +46,7 @@ useSeoMeta({
     <ServicesSection/>
     <WhyUsSection />
     <BeforeAfterSlider/>
+    <BentoGrid/>
     <SplitSection/>
     <PartenairesCarousel/>
   </div>
