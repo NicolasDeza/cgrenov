@@ -47,7 +47,7 @@
   opacity: 0;
 }
 
-/* Carousel partenaires */
+/* Carousel logo partenaires */
 
 @keyframes marquee {
   0% {
@@ -60,4 +60,16 @@
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+}
+
+/* Animation d'entrée fade + slide up pour le hero */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

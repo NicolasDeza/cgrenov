@@ -121,12 +121,12 @@ onMounted(() => {
           >
             <!-- Image -->
             <div class="relative aspect-video overflow-hidden">
-              <img
+              <NuxtImg
                 :src="service.image"
                 :alt="service.title"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
-              >
+              />
 
               <div
                 class="absolute inset-0 bg-gradient-to-t
