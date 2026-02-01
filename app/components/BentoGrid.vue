@@ -5,7 +5,7 @@
 <template>
   <section class="w-full px-6 pb-16 md:pb-24">
     <div class="max-w-[1440px] mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[295px_90px_260px] gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[285px_90px_260px] gap-4">
     <!-- Card 1: GRANDE (haut gauche, 2 rows) -->
     <div class="relative rounded-2xl overflow-hidden group md:row-start-1 md:row-end-3 md:col-start-1 shadow-md hover:shadow-2xl transition-shadow duration-500">
       <NuxtImg src="/images/bentogrid/bento-1.jpg" alt="Image 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -14,7 +14,7 @@
 
     <!-- Card 2: PETITE (haut droite) -->
     <div class="relative rounded-2xl overflow-hidden group md:row-start-1 md:row-end-2 md:col-start-2 shadow-md hover:shadow-2xl transition-shadow duration-500">
-      <NuxtImg src="/images/bentogrid/bento-2.jpg" alt="Image 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+      <NuxtImg src="/images/bentogrid/bento-4.jpg" alt="Image 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
       <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
     </div>
 
@@ -26,7 +26,7 @@
 
     <!-- Card 4: GRANDE (bas droite, 2 rows) -->
     <div class="relative rounded-2xl overflow-hidden group md:row-start-2 md:row-end-4 md:col-start-2 shadow-md hover:shadow-2xl transition-shadow duration-500">
-      <NuxtImg src="/images/bentogrid/bento-4.jpg" alt="Image 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+      <NuxtImg src="/images/bentogrid/bento-2.jpg" alt="Image 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
       <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
     </div>
     </div>
