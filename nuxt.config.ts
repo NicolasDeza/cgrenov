@@ -15,14 +15,6 @@ export default defineNuxtConfig({
   //   },
   // },
 
-  // Dark mode
-  colorMode: {
-    preference: "light", //  DEFAULT
-    fallback: "light", // sécurité
-    classSuffix: "", // => .dark / .light
-    storageKey: "color-mode", // ok par défaut
-  },
-
   // Config SMTP
   runtimeConfig: {
     smtp: {
@@ -88,7 +80,6 @@ export default defineNuxtConfig({
           href: "/images/logo/logo-cg-renov.png",
         },
       ],
-
     },
   },
 });
