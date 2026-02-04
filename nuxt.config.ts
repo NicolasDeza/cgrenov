@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/sitemap"],
 
   // Storyblock (CMS)
   // storyblok: {
@@ -14,6 +14,10 @@ export default defineNuxtConfig({
   //     region: "eu",
   //   },
   // },
+
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://cgrenov.be",
+  },
 
   // Config SMTP
   runtimeConfig: {
