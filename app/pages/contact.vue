@@ -41,7 +41,7 @@ useSeoMeta({
 
 </script>
 <template>
-  <div>s
+  <div>
     <ContactForm />
   </div>
 </template>
