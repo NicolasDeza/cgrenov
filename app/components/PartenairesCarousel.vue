@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="py-16 md:py-24">
+  <section class="py-16 md:py-24 px-2">
     <header class="mb-12 text-center">
        
         <h2 class="text-3xl md:text-5xl font-extrabold">
