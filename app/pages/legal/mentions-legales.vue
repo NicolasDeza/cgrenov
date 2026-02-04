@@ -15,6 +15,13 @@ useSeoMeta({
   title: "Mentions Légales",
   description: "Informations légales et mentions obligatoires du site",
   robots: "noindex, follow",
+
+  ogImage: "https://cgrenov.be/og-cgrenov.jpg",
+  ogUrl: canonical,
+  ogType: "website",
+
+  twitterCard: "summary_large_image",
+  twitterImage: "https://cgrenov.be/og-cgrenov.jpg",
 });
 </script>
 

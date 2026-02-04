@@ -15,6 +15,13 @@ useSeoMeta({
   title: "Politique de Confidentialité",
   description: "Politique de confidentialité et protection des données personnelles",
   robots: "noindex, follow",
+
+  ogImage: "https://cgrenov.be/og-cgrenov.jpg",
+  ogUrl: canonical,
+  ogType: "website",
+
+  twitterCard: "summary_large_image",
+  twitterImage: "https://cgrenov.be/og-cgrenov.jpg",
 });
 </script>
 
