@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/color-mode"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
 
   // Storyblock (CMS)
   // storyblok: {
