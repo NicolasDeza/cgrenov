@@ -9,6 +9,23 @@ useHead(() => ({
       href: canonical.value, 
     },
   ],
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "CG Renov",
+        url: "https://cgrenov.be",
+        telephone: "+32493329794",                                                               image: "https://cgrenov.be/og-cgrenov.jpg",
+        priceRange: "€€",
+        description: "Entreprise de rénovation en Belgique spécialisée en rénovation intérieure et extérieure, transformations et finitions.",                                           address: {
+          "@type": "PostalAddress",
+          addressCountry: "BE",
+        },
+      }),
+    },
+  ],
 }));
 
 useSeoMeta({
