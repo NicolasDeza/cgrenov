@@ -5,31 +5,32 @@
 <template>
   <section class="w-full px-6 pb-16 md:pb-24">
     <div class="max-w-[1440px] mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[275px_80px_250px] gap-4">
-    <!-- Card 1: GRANDE (haut gauche, 2 rows) -->
-    <div class="relative rounded-2xl overflow-hidden group md:row-start-1 md:row-end-3 md:col-start-1 shadow-md hover:shadow-2xl transition-shadow duration-500">
-      <NuxtImg src="/images/bentogrid/bento-1.jpg" alt="Image 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
-    </div>
+      <!-- Grid avec hauteurs personnalisées : petite + grande -->
+      <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[260px_330px] gap-4">
+        <!-- Card 1: GRANDE (gauche, 2 rows) -->
+        <div class="relative rounded-2xl overflow-hidden group md:row-span-2 shadow-md hover:shadow-2xl transition-shadow duration-500">
+          <NuxtImg src="/images/bentogrid/bento-1.jpg" alt="Image 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
+        </div>
 
-    <!-- Card 2: PETITE (haut droite) -->
-    <div class="relative rounded-2xl overflow-hidden group md:row-start-1 md:row-end-2 md:col-start-2 shadow-md hover:shadow-2xl transition-shadow duration-500">
-      <NuxtImg src="/images/bentogrid/bento-4.jpg" alt="Image 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
-    </div>
+        <!-- Card 2: PETITE (haut droite) - Plus petite -->
+        <div class="relative rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-500">
+          <NuxtImg src="/images/bentogrid/bento-3.jpg" alt="Image 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
+        </div>
 
-    <!-- Card 3: PETITE (bas gauche) -->
-    <div class="relative rounded-2xl overflow-hidden group md:row-start-3 md:row-end-4 md:col-start-1 shadow-md hover:shadow-2xl transition-shadow duration-500">
-      <NuxtImg src="/images/bentogrid/bento-3.jpg" alt="Image 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
-    </div>
+        <!-- Card 3: commentée -->
+        <!-- <div class="relative rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-500">
+          <NuxtImg src="/images/bentogrid/bento-3.jpg" alt="Image 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
+        </div> -->
 
-    <!-- Card 4: GRANDE (bas droite, 2 rows) -->
-    <div class="relative rounded-2xl overflow-hidden group md:row-start-2 md:row-end-4 md:col-start-2 shadow-md hover:shadow-2xl transition-shadow duration-500">
-      <NuxtImg src="/images/bentogrid/bento-2.jpg" alt="Image 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
-    </div>
-    </div>
+        <!-- Card 4: GRANDE (bas droite) - Plus grande en hauteur -->
+        <div class="relative rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-500">
+          <NuxtImg src="/images/bentogrid/bento-2.jpg" alt="Image 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500"/>
+        </div>
       </div>
+    </div>
   </section>
 </template>
