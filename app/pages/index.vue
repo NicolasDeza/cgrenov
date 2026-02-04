@@ -1,18 +1,19 @@
 <script setup lang="ts">
 
+const canonical = useCanonical()
 
-  useHead({
+useHead(() => ({
   link: [
     {
       rel: "canonical",
-      href: useRequestURL().href, 
+      href: canonical.value, 
     },
   ],
-});
+}));
 
 useSeoMeta({
   title:
-    "Entreprise de rénovation et toiture en Belgique ",
+    "Entreprise de rénovation et toiture en Belgique",
   description:
     "CG Renov est une entreprise de rénovation en Belgique spécialisée en rénovation intérieure et extérieure, transformations et finitions. Devis gratuit et accompagnement personnalisé.",
 
@@ -23,7 +24,7 @@ useSeoMeta({
   ogDescription:
     "Vous avez un projet de rénovation ? CG Renov vous accompagne pour vos travaux intérieurs et extérieurs partout en Belgique. Contactez-nous pour un devis gratuit.",
   ogImage: "https://cgrenov.be/og-cgrenov.jpg",
-  ogUrl: useRequestURL().href,
+  ogUrl: canonical,
   ogType: "website",
 
   twitterCard: "summary_large_image",
@@ -33,13 +34,11 @@ useSeoMeta({
   twitterImage: "https://cgrenov.be/og-cgrenov.jpg",
 });
 
-
 </script>
 
 
-
-
 <template>
+
   <div>
     <HeroSection />
     <HeroContactBar/>
@@ -50,4 +49,5 @@ useSeoMeta({
     <SplitSection/>
     <PartenairesCarousel/>
   </div>
+  
   </template>

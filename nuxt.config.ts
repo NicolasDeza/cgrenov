@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     },
     turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
     public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://cgrenov.be",
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY,
       // storyblokToken: process.env.STORYBLOK_API_TOKEN,
     },

@@ -1,10 +1,12 @@
 <script setup lang="ts">
 
-useHead({
+const canonical = useCanonical()
+
+useHead(() => ({
   link: [
     {
       rel: "canonical",
-      href: useRequestURL().href,
+      href: canonical.value,
     },
   ],
   script: [
@@ -14,7 +16,7 @@ useHead({
       defer: true,
     },
   ],
-});
+}));
 
 useSeoMeta({
   title: "Contact",
@@ -27,7 +29,7 @@ useSeoMeta({
   ogDescription:
     "Un projet de rénovation ? CG Renov vous accompagne pour vos travaux intérieurs et extérieurs partout en Belgique. Contactez-nous pour un devis gratuit.",
   ogImage: "https://cgrenov.be/og-cgrenov.jpg",
-  ogUrl: useRequestURL().href,
+  ogUrl: canonical,
   ogType: "website",
 
   twitterCard: "summary_large_image",
@@ -39,9 +41,7 @@ useSeoMeta({
 
 </script>
 <template>
-  <div>
-   
-
+  <div>s
     <ContactForm />
   </div>
 </template>
