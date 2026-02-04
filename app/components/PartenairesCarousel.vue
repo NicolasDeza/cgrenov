@@ -82,9 +82,10 @@ onBeforeUnmount(() => {
               <template v-if="item.src">
                 <img :src="item.src" :alt="item.name" class="max-h-20 max-w-40 object-contain" >
               </template>
-          
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div></div></section>
+  </section>
 </template>
