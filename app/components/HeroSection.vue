@@ -14,8 +14,11 @@ const heroContent = ref<HTMLElement | null>(null)
       src="/images/hero.jpg"
       alt="CG Renov - Entreprise de rénovation et toiture"
       class="absolute inset-0 w-full h-full object-cover"
-      priority
-
+      preload
+      fetchpriority="high"
+      loading="eager"
+      quality="80"
+      format="webp"
     />
 
     <!-- Overlay sombre -->
