@@ -32,7 +32,7 @@ useSeoMeta({
   title:
     "Entreprise de rénovation et toiture en Belgique",
   description:
-    "CG Renov est une entreprise de rénovation en Belgique spécialisée en rénovation intérieure et extérieure, transformations et finitions. Devis gratuit et accompagnement personnalisé.",
+    "Entreprise de rénovation en Belgique spécialisée en travaux intérieurs et extérieurs. Devis gratuit et accompagnement personnalisé.",
 
   robots: "index, follow",
 
