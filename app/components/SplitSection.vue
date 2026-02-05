@@ -10,6 +10,13 @@ defineProps<{
 }>()
 
 const contentRef = ref<HTMLElement | null>(null)
+const clientsCount = ref<HTMLElement | null>(null)
+const anneesCount = ref<HTMLElement | null>(null)
+
+const stats = [
+  { ref: clientsCount, value: 100, suffix: '+', label: 'Clients satisfaits' },
+  { ref: anneesCount, value: 8, suffix: '', label: "Années d'expérience" }
+]
 
 onMounted(() => {
   if (!contentRef.value) return
@@ -26,6 +33,27 @@ onMounted(() => {
     ease: "power2.out",
     stagger: 0.15,
   })
+
+  // Animation des compteurs
+  stats.forEach(stat => {
+    if (!stat.ref.value) return
+    
+    gsap.to({ val: 0 }, {
+      val: stat.value,
+      duration: 2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: stat.ref.value,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      onUpdate: function() {
+        if (stat.ref.value) {
+          stat.ref.value.textContent = Math.floor(this.targets()[0].val).toString()
+        }
+      }
+    })
+  })
 })
 </script>
 
@@ -33,7 +61,7 @@ onMounted(() => {
   <section class="w-full bg-[#11171D]">
     <div class="flex flex-col lg:flex-row">
       <!-- Image -->
-      <div class="relative h-[320px] lg:h-[500px] lg:w-1/2">
+      <div class="relative h-[320px] lg:h-auto lg:w-1/2">
         <NuxtImg
           :src="image || '/images/cta/split.jpg'"
           alt="Projet de rénovation"
@@ -59,7 +87,21 @@ onMounted(() => {
           travaux, avec une approche sérieuse, transparente et orientée
           qualité.
         </p>
-
+        <!-- Stats animées -->
+        <div class="mt-10 flex items-center justify-start gap-12 md:gap-16">
+          <div v-for="(stat, index) in stats" :key="index" class="text-center">
+            <div class="flex items-baseline justify-center gap-1">
+              <span 
+                :ref="el => el && (stat.ref.value = el as HTMLElement)"
+                class="text-4xl md:text-5xl font-bold text-primary"
+              >
+                0
+              </span>
+              <span class="text-3xl md:text-4xl font-bold text-primary">{{ stat.suffix }}</span>
+            </div>
+            <p class="mt-2 text-xs md:text-sm text-white/70 font-medium">{{ stat.label }}</p>
+          </div>
+        </div>
         <div class="mt-10">
           <NuxtLink
             to="/contact"
