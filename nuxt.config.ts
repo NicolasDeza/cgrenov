@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   // },
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || "https://cgrenov.be",
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://www.cgrenov.be",
   },
 
   // Config SMTP

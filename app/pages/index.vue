@@ -16,8 +16,8 @@ useHead(() => ({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "CG Renov",
-        url: "https://cgrenov.be",
-        telephone: "+32493329794",                                                               image: "https://cgrenov.be/og-cgrenov.jpg",
+        url: "https://www.cgrenov.be",
+        telephone: "+32493329794",                                                               image: "https://www.cgrenov.be/og-cgrenov.jpg",
         priceRange: "€€",
         description: "Entreprise de rénovation en Belgique spécialisée en rénovation intérieure et extérieure, transformations et finitions.",                                           address: {
           "@type": "PostalAddress",
@@ -40,7 +40,7 @@ useSeoMeta({
     "CG Renov – Travaux de rénovation intérieure et extérieure en Belgique",
   ogDescription:
     "Vous avez un projet de rénovation ? CG Renov vous accompagne pour vos travaux intérieurs et extérieurs partout en Belgique. Contactez-nous pour un devis gratuit.",
-  ogImage: "https://cgrenov.be/og-cgrenov.jpg",
+  ogImage: "https://www.cgrenov.be/og-cgrenov.jpg",
   ogUrl: canonical,
   ogType: "website",
 
@@ -48,7 +48,7 @@ useSeoMeta({
   twitterTitle: "CG Renov – Entreprise de rénovation",
   twitterDescription:
     "Entreprise de rénovation en Belgique. Rénovation intérieure, extérieure et transformations. Devis gratuit.",
-  twitterImage: "https://cgrenov.be/og-cgrenov.jpg",
+  twitterImage: "https://www.cgrenov.be/og-cgrenov.jpg",
 });
 
 </script>

@@ -28,7 +28,7 @@ useSeoMeta({
   ogTitle: "Contactez CG Renov – Travaux de rénovation en Belgique",
   ogDescription:
     "Un projet de rénovation ? CG Renov vous accompagne pour vos travaux intérieurs et extérieurs partout en Belgique. Contactez-nous pour un devis gratuit.",
-  ogImage: "https://cgrenov.be/og-cgrenov.jpg",
+  ogImage: "https://www.cgrenov.be/og-cgrenov.jpg",
   ogUrl: canonical,
   ogType: "website",
 
@@ -36,7 +36,7 @@ useSeoMeta({
   twitterTitle: "Contact – CG Renov",
   twitterDescription:
     "Entreprise de rénovation en Belgique. Demandez votre devis gratuit avec CG Renov.",
-  twitterImage: "https://cgrenov.be/og-cgrenov.jpg",
+  twitterImage: "https://www.cgrenov.be/og-cgrenov.jpg",
 });
 
 </script>
