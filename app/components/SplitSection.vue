@@ -63,13 +63,13 @@ onMounted(() => {
         <div class="mt-10">
           <NuxtLink
             to="/contact"
-            class="inline-flex items-center rounded-lg bg-primary px-6 py-3
-                   font-semibold text-white transition-all
-                   hover:bg-primary/90 hover:scale-105 focus-visible:outline-none
-                   focus-visible:ring-2 focus-visible:ring-primary
+            class="group relative inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3
+                   font-semibold text-white overflow-hidden transition-all duration-300 ease-out hover:scale-105
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary
                    focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
-            Mon devis gratuit
+            <span class="relative z-10">Mon devis gratuit</span>
+            <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
           </NuxtLink>
         </div>
       </div>

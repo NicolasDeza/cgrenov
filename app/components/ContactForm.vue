@@ -337,11 +337,11 @@ onBeforeUnmount(() => {
           <button
             type="submit"
             :disabled="loading"
-            class="group relative w-full px-4 py-4 rounded-lg bg-primary hover:bg-primary-hover text-white font-bold text-base uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 overflow-hidden"
+            class="group relative w-full px-4 py-4 rounded-lg bg-primary text-white font-bold text-base uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ease-out shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 overflow-hidden"
           >
-            <div class="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors"/>
             <span class="relative z-10">{{ loading ? 'Envoi en cours…' : 'Envoyer' }}</span>
             <Send v-if="!loading" :size="20" class="relative z-10 stroke-[2.5]" />
+            <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
           </button>
         </form>
       </div>

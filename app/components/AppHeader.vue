@@ -123,9 +123,11 @@ onUnmounted(() => {
         <!-- CTA desktop -->
         <NuxtLink
           to="/contact"
-          class="hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover hover:scale-105 transition-transform"
+          class="group relative hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white overflow-hidden
+                 transition-all duration-300 ease-out hover:scale-105"
         >
-          Contactez-nous
+          <span class="relative z-10">Contactez-nous</span>
+          <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
         </NuxtLink>
 
         <!-- Hamburger mobile -->
@@ -214,10 +216,12 @@ onUnmounted(() => {
       <li class="pt-2">
         <NuxtLink
           to="/contact"
-          class="inline-flex w-full justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-hover transition"
+          class="group relative inline-flex w-full justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white overflow-hidden
+                 transition-all duration-300 ease-out hover:scale-105"
           @click="closeMenu"
         >
-          Contactez-nous
+          <span class="relative z-10">Contactez-nous</span>
+          <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
         </NuxtLink>
       </li>
     </ul>

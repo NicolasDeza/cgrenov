@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue"
-
-const heroContent = ref<HTMLElement | null>(null)
 </script>
 
 <template>
@@ -26,7 +23,6 @@ const heroContent = ref<HTMLElement | null>(null)
 
     <!-- Wrapper 1440px pour le contenu -->
     <div
-      ref="heroContent"
       class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-left flex flex-col items-start gap-4"
     >
       <!-- Titre principal -->
@@ -59,9 +55,11 @@ class="mt-6 flex flex-wrap items-center justify-start gap-4
                   animate-[fadeInUp_0.6s_ease-out_0.45s_both]">
         <NuxtLink
           to="/contact"
-          class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2 md:py-3 text-lg font-bold text-white hover:bg-primary-hover hover:scale-105 transition-transform"
+          class="group relative inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2 md:py-3 text-lg font-bold text-white overflow-hidden
+                 transition-all duration-300 ease-out hover:scale-105"
         >
-          Demander un devis
+          <span class="relative z-10">Demander un devis</span>
+          <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
         </NuxtLink>
       </div>
     </div>
