@@ -12,8 +12,7 @@ import {
   <section class="w-full bg-[#11171D] border-t border-white/5">
     <div
       class="mx-auto max-w-[1440px] px-4 py-5
-             flex flex-col gap-4
-             md:flex-row md:items-center md:justify-between"
+             flex flex-row items-center justify-between gap-4"
     >
       <!-- Contact & localisation -->
       <div class="flex flex-col sm:flex-row sm:items-center gap-3 text-white/80 text-sm">
@@ -46,7 +45,7 @@ import {
       </div>
 
       <!-- Réseaux sociaux -->
-      <div class="hidden lg:flex items-center gap-3">
+      <div class="flex items-center gap-3">
         <a
           href="https://www.facebook.com/CGRenov1325/"
           target="_blank"
