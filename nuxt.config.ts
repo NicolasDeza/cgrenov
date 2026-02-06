@@ -71,14 +71,14 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+        {
+          rel: "icon",
           type: "image/png",
           href: "/images/logo/logo-cg-renov.png",
         },
-        // {
-        //   rel: "icon",
-        //   type: "image/x-icon",
-        //   href: "/favicon.ico",
-        // },
         {
           rel: "apple-touch-icon",
           sizes: "180x180",
