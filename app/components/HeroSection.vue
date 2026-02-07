@@ -14,6 +14,7 @@
       preload
       fetchpriority="high"
       loading="eager"
+      decoding="async"
       quality="80"
       format="webp"
     />
