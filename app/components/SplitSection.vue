@@ -15,7 +15,7 @@ const anneesCount = ref<HTMLElement | null>(null)
 
 const stats = [
   { ref: clientsCount, value: 100, suffix: '+', label: 'Clients satisfaits' },
-  { ref: anneesCount, value: 8, suffix: '', label: "Années d'expérience" }
+  { ref: anneesCount, value: 6, suffix: '', label: "Années d'expérience" }
 ]
 
 onMounted(() => {
