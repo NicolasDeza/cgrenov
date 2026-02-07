@@ -15,17 +15,18 @@ useHead({
     class="relative w-full flex items-center py-14 sm:py-28 lg:py-[150px]"
     aria-label="Section d'accueil"
   >
-    <!-- Image de fond optimisÃ©e -->
-    <img
+    <!-- Image de fond optimisée -->
+    <NuxtImg
       src="/images/hero.jpg"
       alt="CG Renov - Entreprise de rénovation et toiture"
       class="absolute inset-0 w-full h-full object-cover"
+      preload
       fetchpriority="high"
       loading="eager"
       decoding="async"
-      width="1920"
-      height="1080"
-    >
+      quality="80"
+      format="webp"
+    />
 
     <!-- Overlay sombre -->
     <div class="absolute inset-0 bg-black/55" />
@@ -40,13 +41,13 @@ useHead({
                animate-[fadeInUp_0.6s_ease-out]"
       >
         <span class="block text-primary font-extrabold text-5xl sm:text-7xl mb-2">CG RENOV</span>
-        <span class="block">Entreprise de rÃ©novation et Toiture</span>
+        <span class="block">Entreprise de rénovation et Toiture</span>
       </h1>
 
       <h2
 class="mt-2 md:mt-4 text-2xl sm:text-4xl font-bold text-white
                  animate-[fadeInUp_0.6s_ease-out_0.15s_both]">
-        La passion dans chacune de nos rÃ©alisations
+        La passion dans chacune de nos réalisations
       </h2>
 
       <!-- Sous-titre -->
@@ -54,7 +55,7 @@ class="mt-2 md:mt-4 text-2xl sm:text-4xl font-bold text-white
 class="max-w-2xl text-base sm:text-xl text-white/90 font-semibold
                 animate-[fadeInUp_0.6s_ease-out_0.3s_both]">
         Nous accompagnons particuliers et professionnels
-        dans leurs projets de rÃ©novation et de toiture.
+        dans leurs projets de rénovation et de toiture.
 
       </p>
 

@@ -3,6 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
+  features: {
+    inlineStyles: true,
+  },
+
+  experimental: {
+    writeEarlyHints: true,
+  },
+
   css: ["~/assets/css/main.css"],
 
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/sitemap"],
@@ -36,12 +44,6 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://www.cgrenov.be",
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY,
       // storyblokToken: process.env.STORYBLOK_API_TOKEN,
-    },
-  },
-
-  vite: {
-    server: {
-      allowedHosts: true,
     },
   },
 
