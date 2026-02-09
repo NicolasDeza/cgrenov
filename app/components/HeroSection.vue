@@ -11,8 +11,8 @@ useHead({
 </script>
 
 <template>
-  <section
-    class="relative w-full flex items-center py-14 sm:py-28 lg:py-[150px]"
+   <section
+    class="relative w-full flex items-center py-10 sm:py-0 min-h-[380px] sm:min-h-[700px]"
     aria-label="Section d'accueil"
   >
     <!-- Image de fond optimisée -->
