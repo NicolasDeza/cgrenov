@@ -12,7 +12,7 @@ useHead({
 
 <template>
    <section
-    class="relative w-full flex items-center py-10 sm:py-0 min-h-[410px] sm:min-h-[700px]"
+    class="relative w-full flex items-center py-12 sm:py-28 lg:py-[150px]"
     aria-label="Section d'accueil"
   >
     <!-- Image de fond optimisée -->
