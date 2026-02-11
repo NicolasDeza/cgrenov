@@ -29,7 +29,7 @@ const toggleSection = (section: string) => {
 
 <template>
   <footer
-    class="w-full border-t border-foreground/20 bg-primary-bg"
+    class="w-full border-foreground/20 bg-primary-bg"
     aria-label="Pied de page"
   >
     <div class="mx-auto max-w-[1440px] px-4 pt-8 md:pt-12 pb-4 md:pb-6">
