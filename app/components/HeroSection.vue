@@ -1,4 +1,6 @@
-﻿<script setup lang="ts">
+﻿﻿<script setup lang="ts">
+import { Phone } from 'lucide-vue-next';
+
 useHead({
   link: [
     {
@@ -18,7 +20,8 @@ useHead({
     <!-- Image de fond optimisée -->
     <NuxtImg
       src="/images/hero.jpg"
-      alt="CG Renov - Entreprise de rénovation et toiture"
+      alt=""
+      aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover"
       preload
       fetchpriority="high"
@@ -66,15 +69,31 @@ class="mt-6 flex flex-wrap items-center justify-start gap-4
         <NuxtLink
           to="/contact"
           class="group relative inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2 md:py-3 text-lg font-bold text-white overflow-hidden
-                 transition-all duration-300 ease-out hover:scale-105"
+                 transition-all duration-300 ease-out hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           <span class="relative z-10">Demander un devis</span>
           <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
         </NuxtLink>
+        
+        <a
+          href="tel:+32493329794"
+          class="inline-flex items-center gap-2 rounded-md bg-white/10 backdrop-blur-sm border-2 border-white/30 px-6 py-2 md:py-3 text-lg font-bold text-white
+                 transition-all duration-300 ease-out hover:scale-105 hover:bg-white/20 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          <Phone :size="20" aria-hidden="true" />
+          <span>Appeler</span>
+        </a>
       </div>
     </div>
   </section>
 </template>
 
-
-
+<style scoped>
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
