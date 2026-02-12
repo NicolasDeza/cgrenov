@@ -72,7 +72,8 @@ onMounted(() => {
           Pourquoi choisir <span class="text-primary">CG Renov</span>
         </h2>
         
-        <div class="mt-6 h-1 w-32 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
+        <div class="mx-auto mt-8 h-1 w-32 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
+        
       </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">

@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
         <p class="mt-4 text-gray-700 max-w-2xl mx-auto text-medium md:text-lg font-semibold">
           Des partenaires de confiance, reconnus pour leur expertise dans le secteur du bâtiment.
         </p>
-        <div class="mx-auto mt-6 h-1 w-32 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
+        <div class="mx-auto mt-8 h-1 w-32 rounded-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
       </header>
 
     <div class="mx-auto max-w-[850px] px-6 mt-16">
