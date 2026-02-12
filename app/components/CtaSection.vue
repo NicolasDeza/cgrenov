@@ -3,8 +3,8 @@
     <div class="mx-auto px-1 sm:px-3">
       <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-[#1a1f26] px-6 py-8 md:px-20 md:py-12 text-center shadow-xl">
         
-        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        <!-- <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" /> -->
 
         <div class="relative z-10">
           <!-- <span class="inline-block px-4 py-1.5 mb-6 text-xs font-black uppercase tracking-[0.2em] text-primary bg-primary/10 rounded-full border border-primary/20">
