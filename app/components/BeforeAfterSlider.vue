@@ -146,7 +146,7 @@ onMounted(() => {
   <div class="pt-3">
     <NuxtLink
       to="/contact"
-      class="group relative inline-flex items-center justify-center gap-3 rounded-lg bg-primary px-8 py-3 font-extrabold text-white  transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
+      class="group relative inline-flex items-center justify-center gap-3 rounded-lg bg-primary px-8 py-3 font-bold text-white  transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
     >
       <span class="relative z-10 uppercase tracking-wider">Discuter de mon projet</span>
       <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
