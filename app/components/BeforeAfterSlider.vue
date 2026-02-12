@@ -118,7 +118,7 @@ onMounted(() => {
     Des rénovations <span class="text-primary">visibles</span>, durables et soignées
   </h2>
 
-  <div class="h-1 w-28 bg-gradient-to-r from-primary via-primary/50 to-transparent rounded-full" />
+  <div class="h-1 w-32 bg-gradient-to-r from-primary via-primary/50 to-transparent rounded-full" />
 
   <div class="space-y-6">
     <p class="text-lg text-slate-600 leading-relaxed">
