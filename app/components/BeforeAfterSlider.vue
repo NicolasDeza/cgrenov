@@ -112,32 +112,48 @@ onMounted(() => {
         </div>
 
         <!-- Partie Texte (droite) -->
-        <div ref="contentRef" class="space-y-6">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Des rénovations visibles, durables et soignées
-          </h2>
+        <div ref="contentRef" class="flex flex-col gap-6 md:pl-6 lg:pl-10">
 
-          <div class="space-y-4 text-gray-700">
-            <p>
-              Chaque chantier réalisé par <span class="text-orange-500 font-semibold">CG Renov</span> est pensé dans le respect des normes, des délais et des attentes du client. Nous accordons une attention particulière aux finitions et à la qualité des matériaux utilisés.
-            </p>
+  <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.15]">
+    Des rénovations <span class="text-primary">visibles</span>, durables et soignées
+  </h2>
 
-            <p>
-              Grâce à notre expérience terrain et à une organisation rigoureuse, nous garantissons des rénovations durables, esthétiques et fonctionnelles, adaptées à votre mode de vie.
-            </p>
-          </div>
+  <div class="h-1 w-28 bg-gradient-to-r from-primary via-primary/50 to-transparent rounded-full" />
 
-          <div>
-            <NuxtLink
-              to="/contact"
-              class="group relative inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-white overflow-hidden
-                     transition-all duration-300 ease-out hover:scale-105"
-            >
-              <span class="relative z-10">Nous contacter</span>
-              <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
-            </NuxtLink>
-          </div>
+  <div class="space-y-6">
+    <p class="text-lg text-slate-600 leading-relaxed">
+      Chaque chantier réalisé par <span class="text-slate-900 font-bold border-b-2 border-primary/30">CG Renov</span> est pensé dans le respect des normes et des attentes de nos clients.
+    </p>
+
+    <ul class="grid grid-cols-1 gap-3 py-2">
+      <li class="flex items-center gap-3 text-slate-700 font-medium">
+        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
         </div>
+        Matériaux de haute qualité certifiés
+      </li>
+      <li class="flex items-center gap-3 text-slate-700 font-medium">
+        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        Organisation rigoureuse et propreté
+      </li>
+    </ul>
+
+  
+  </div>
+
+  <div class="pt-3">
+    <NuxtLink
+      to="/contact"
+      class="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-primary px-8 py-3 font-extrabold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
+    >
+      <span class="relative z-10 uppercase tracking-wider">Discuter de mon projet</span>
+      <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
+      
+    </NuxtLink>
+  </div>
+</div>
       </div>
     </div>
   </section>
