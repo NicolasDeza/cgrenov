@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full bg-white pt-12 sm:pt-12 px-1" aria-label="Appel à l'action">
+  <section class="w-full bg-white  px-1" aria-label="Appel à l'action">
     <div class="mx-auto px-1 sm:px-3">
       <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-[#1a1f26] px-6 py-8 md:px-20 md:py-12 text-center shadow-xl">
         
