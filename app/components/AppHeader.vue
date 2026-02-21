@@ -144,7 +144,7 @@ v-for="link in [
             <li class="mt-2">
               <NuxtLink 
                 to="/contact" 
-                class="group relative flex items-center justify-center px-4 py-3.5 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/25 overflow-hidden"
+                class="group relative flex items-center justify-center px-4 py-3.5 bg-primary text-white font-bold rounded-lg  overflow-hidden"
                 @click="closeMenu"
               >
                 <span class="relative z-10">Mon devis gratuit</span>
