@@ -254,9 +254,12 @@ onBeforeUnmount(() => {
             v-if="errors.global"
             role="alert"
             aria-live="polite"
-            class="p-4 bg-red-50 border-l-4 border-red-500 text-red-700  text-sm font-medium"
+            class="flex items-start gap-3 p-4 rounded-lg bg-red-50 border border-red-400"
           >
-            {{ errors.global }}
+            <Info :size="20" class="text-red-600 flex-shrink-0 mt-0.5" />
+            <p class="text-sm text-red-700 font-medium">
+              {{ errors.global }}
+            </p>
           </div>
 
           <!-- Nom -->
