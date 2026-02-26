@@ -249,19 +249,6 @@ onBeforeUnmount(() => {
             </div>
           </div>
 
-          <!-- Erreur globale -->
-          <div
-            v-if="errors.global"
-            role="alert"
-            aria-live="polite"
-            class="flex items-start gap-3 p-4 rounded-lg bg-red-50 border border-red-400"
-          >
-            <Info :size="20" class="text-red-600 flex-shrink-0 mt-0.5" />
-            <p class="text-sm text-red-700 font-medium">
-              {{ errors.global }}
-            </p>
-          </div>
-
           <!-- Nom -->
           <div class="space-y-2">
             <label for="name" class="block text-sm font-bold text-slate-900  uppercase tracking-wide">
@@ -333,6 +320,19 @@ onBeforeUnmount(() => {
             <Info :size="20" class="text-primary flex-shrink-0 mt-0.5" />
             <p class="text-sm text-primary  font-medium ">
               Nous revenons vers vous rapidement pour établir votre devis.
+            </p>
+          </div>
+
+          <!-- Erreur globale -->
+          <div
+            v-if="errors.global"
+            role="alert"
+            aria-live="polite"
+            class="flex items-start gap-3 p-4 rounded-lg bg-red-50 border border-red-400"
+          >
+            <Info :size="20" class="text-red-600 flex-shrink-0 mt-0.5" />
+            <p class="text-sm text-red-700 font-medium">
+              {{ errors.global }}
             </p>
           </div>
 
